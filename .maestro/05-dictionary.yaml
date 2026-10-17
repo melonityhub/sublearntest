@@ -5,7 +5,9 @@ appId: com.sublearn.app.debug
 name: Dictionary
 ---
 - launchApp
-- waitForAnimationToEnd
+- extendedWaitUntil:
+    visible: "Continue watching"
+    timeout: 30000
 - tapOn:
     text: "^Dictionary$"
     optional: true

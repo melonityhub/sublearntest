@@ -166,11 +166,25 @@ jobs:
           api-level: 34
           arch: x86_64
           target: google_apis
+          # Without a profile avdmanager picks its own default, which on this runner came out as a
+          # 320 x 640 px screen: every phone layout is squeezed into 320 dp and labels clip. The
+          # Pixel 6 profile is a normal 411 dp phone (1080 x 2400 px).
+          profile: pixel_6
           disable-animations: true
           emulator-options: -no-window -no-audio -no-boot-anim -gpu swiftshader_indirect
           # One line only: the action splits this input into single-line commands and runs each
           # with `sh -c`, so the actual body is a script in the repository.
           script: bash "$GITHUB_WORKSPACE/scripts/run-ui-snapshots.sh"
+
+      - name: Install ImageMagick
+        # The screenshots are resized with ImageMagick before they are published; the runner image
+        # does not ship it, and the first run silently fell back to copying the full-size files.
+        if: always()
+        shell: bash
+        run: |
+          sudo apt-get update -qq || true
+          sudo apt-get install -y -qq imagemagick || true
+          (magick -version || convert -version || echo "ImageMagick is not installed") 2>&1 | head -3
 
       - name: Collect screenshots and logs
         if: always()
@@ -182,11 +196,13 @@ jobs:
 
           resize() {
             # $1 source, $2 destination
+            # 600 px wide, but never upscaled (the `>` flag): a 320 px capture would only get
+            # blurrier.
             if command -v magick >/dev/null 2>&1; then
-              magick "$1" -resize 600x "$2" 2>/dev/null && return 0
+              magick "$1" -resize '600x>' "$2" 2>/dev/null && return 0
             fi
             if command -v convert >/dev/null 2>&1; then
-              convert "$1" -resize 600x "$2" 2>/dev/null && return 0
+              convert "$1" -resize '600x>' "$2" 2>/dev/null && return 0
             fi
             cp "$1" "$2"
           }
@@ -228,6 +244,7 @@ jobs:
             echo "attempt: $GITHUB_RUN_ATTEMPT"
             echo "commit: $GITHUB_SHA"
             echo "build outcome: ${{ steps.build.outcome }}"
+            echo "screenshot resize: $(command -v magick || command -v convert || echo 'unavailable (files copied)')"
             echo "date: $(date -u +%Y-%m-%dT%H:%M:%SZ)"
             echo
             echo "PNG files:"
