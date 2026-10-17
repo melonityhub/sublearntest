@@ -5,23 +5,35 @@
 #   settings_search               = "Search settings"
 #   settings_category_downloads   = "Downloads"
 #
-# The drawer has no labelled hamburger of its own (its contentDescription is R.string
-# menu_settings in SubLearnApp.kt), so it is opened by position at the top-left of the app bar.
-# Every label tap is optional: one wrong string must not throw away the rest of the screenshots.
+# The hamburger in the app bar carries contentDescription R.string.menu_settings, i.e. "Settings"
+# (SubLearnApp.kt), so on Home the only "Settings" on screen is that button and the first tap opens
+# the drawer. Every navigation tap is optional or guarded, so one wrong label cannot throw away the
+# rest of the screenshots.
 appId: com.sublearn.app.debug
 name: Settings and Downloads
 ---
 - launchApp
-- waitForAnimationToEnd
-- tapOn:
-    point: "6%,6%"
-- waitForAnimationToEnd
-- takeScreenshot: drawer
-# The top-bar icon and the drawer row are both described as "Settings"; if this tap lands on the
-# icon instead of the row, the app stays on the drawer and the fallback below opens the row by its
-# known place in the drawer (title + one 60 dp row per entry).
+- extendedWaitUntil:
+    visible: "Continue watching"
+    timeout: 30000
 - tapOn:
     text: "^Settings$"
+    optional: true
+- waitForAnimationToEnd
+- runFlow:
+    when:
+      notVisible: "^My Words$"
+    commands:
+      - tapOn:
+          point: "7%,6%"
+      - waitForAnimationToEnd
+- takeScreenshot: drawer
+# With the drawer open "Settings" matches twice: the hamburger behind the scrim and the drawer row.
+# index 1 is the row when the app content is first in the tree; the point taps below are fallbacks
+# for the Pixel 6 layout (411 x 914 dp, the drawer row is at ~242 dp).
+- tapOn:
+    text: "^Settings$"
+    index: 1
     optional: true
 - waitForAnimationToEnd
 - runFlow:
@@ -31,15 +43,23 @@ name: Settings and Downloads
       - tapOn:
           point: "15%,26%"
       - waitForAnimationToEnd
+- runFlow:
+    when:
+      notVisible: "^Search settings$"
+    commands:
+      - tapOn:
+          point: "15%,38%"
+      - waitForAnimationToEnd
 - takeScreenshot: settings
 # The root list is longer than one screen. The screen's own search box filters it down to the
-# Downloads row, which is how the user finds it too (SET-2).
+# Downloads row, which is how the user finds it too (SET-2). "downloa" rather than "Downloads" so
+# that the exact-match tap below can only hit the row, never the text the field now contains.
 - runFlow:
     when:
       visible: "^Search settings$"
     commands:
       - tapOn: "^Search settings$"
-      - inputText: "Downloads"
+      - inputText: "downloa"
       - hideKeyboard
       - waitForAnimationToEnd
 - takeScreenshot: settings-search

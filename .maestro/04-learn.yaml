@@ -4,7 +4,9 @@ appId: com.sublearn.app.debug
 name: Learn
 ---
 - launchApp
-- waitForAnimationToEnd
+- extendedWaitUntil:
+    visible: "Continue watching"
+    timeout: 30000
 - tapOn:
     text: "^Learn$"
     optional: true

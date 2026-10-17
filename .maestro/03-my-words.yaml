@@ -4,10 +4,21 @@ appId: com.sublearn.app.debug
 name: My Words
 ---
 - launchApp
-- waitForAnimationToEnd
+- extendedWaitUntil:
+    visible: "Continue watching"
+    timeout: 30000
+# Opens the drawer: on Home this is the hamburger (its contentDescription is R.string.menu_settings).
 - tapOn:
-    point: "6%,6%"
+    text: "^Settings$"
+    optional: true
 - waitForAnimationToEnd
+- runFlow:
+    when:
+      notVisible: "^My Words$"
+    commands:
+      - tapOn:
+          point: "7%,6%"
+      - waitForAnimationToEnd
 - tapOn:
     text: "^My Words$"
     optional: true

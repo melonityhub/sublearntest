@@ -1,0 +1,14 @@
+# A second Home capture, after the first frame.
+#
+# 01-home.yaml is deliberately only launchApp + takeScreenshot, and it produces the launch frame
+# (black, Compose has not drawn yet, ~2 s after the process starts). This flow waits for the Home
+# header to be on screen before it captures, which is the image to judge the design from.
+appId: com.sublearn.app.debug
+name: Home settled
+---
+- launchApp
+- extendedWaitUntil:
+    visible: "Continue watching"
+    timeout: 30000
+- waitForAnimationToEnd
+- takeScreenshot: home-settled
