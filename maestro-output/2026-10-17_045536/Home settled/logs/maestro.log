@@ -1,0 +1,21 @@
+04:55:52.534 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Define variables RUNNING
+04:55:52.543 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Define variables COMPLETED
+04:55:52.546 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Apply configuration RUNNING
+04:55:52.547 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Apply configuration COMPLETED
+04:55:52.549 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Launch app "com.sublearn.app.debug" RUNNING
+04:55:54.200 [ INFO] maestro.Maestro.launchApp$lambda$5: Launching app com.sublearn.app.debug
+04:55:54.200 [ INFO] maestro.Maestro.launchApp$lambda$5: Stopping com.sublearn.app.debug app during launch
+04:55:54.684 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Launch app "com.sublearn.app.debug" COMPLETED
+04:55:54.687 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Assert that "Continue watching" is visible RUNNING
+04:56:00.442 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Assert that "Continue watching" is visible COMPLETED
+04:56:00.450 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Wait for animation to end RUNNING
+04:56:00.453 [ INFO] maestro.Maestro.waitForAnimationToEnd$lambda$53: Waiting for animation to end with timeout 15000
+04:56:00.462 [TRACE] maestro.utils.ScreenshotUtils.takeScreenshot: Taking screenshot to byte array
+04:56:00.462 [TRACE] maestro.utils.ScreenshotUtils.takeScreenshot: Taking screenshot to output sink
+04:56:01.812 [TRACE] maestro.utils.ScreenshotUtils.takeScreenshot: Taking screenshot to byte array
+04:56:01.812 [TRACE] maestro.utils.ScreenshotUtils.takeScreenshot: Taking screenshot to output sink
+04:56:03.053 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Wait for animation to end COMPLETED
+04:56:03.053 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Take screenshot home-settled RUNNING
+04:56:03.057 [ INFO] maestro.Maestro.takeScreenshot: Taking screenshot
+04:56:03.059 [TRACE] maestro.utils.ScreenshotUtils.takeScreenshot: Taking screenshot to output sink
+04:56:03.433 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Take screenshot home-settled COMPLETED

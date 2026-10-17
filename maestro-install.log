@@ -1,0 +1,23 @@
+* Create distribution directories...
+* Downloading...
+#=#=#                                                                          ##O#-#                                                                                                                                                    0.4%###                                                                        5.0%#########                                                                 13.4%################                                                          23.5%#########################                                                 35.1%################################                                          45.2%######################################                                    53.7%############################################                              62.1%####################################################                      72.2%##########################################################                80.6%################################################################          89.0%####################################################################      95.8%######################################################################## 100.0%
+* Checking archive integrity...
+* Extracting archive...
+* Remove previous installation (if any)
+* Copying archive contents...
+* Cleaning up...
+
+Attempt update of interactive bash profile on regular UNIX...
+Adding maestro to your PATH in /home/runner/.bashrc
+Adding maestro to your PATH in /home/runner/.zshrc
+
+Installation was successful!
+Please open a new terminal OR run the following in the existing one:
+
+    export PATH="$PATH":"$HOME/.maestro/bin"
+
+Then run the following command:
+
+    maestro
+
+Welcome to Maestro!

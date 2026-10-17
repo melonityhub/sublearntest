@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuites>
+  <testsuite name="Test Suite" device="test" tests="6" failures="0" time="104.614" timestamp="2026-10-17T04:55:51">
+    <testcase id="Home settled" name="Home settled" classname="Home settled" file=".maestro/06-home-settled.yaml" time="12.63" timestamp="2026-10-17T04:55:51" status="SUCCESS"/>
+    <testcase id="Learn" name="Learn" classname="Learn" file=".maestro/04-learn.yaml" time="10.495" timestamp="2026-10-17T04:56:04" status="SUCCESS"/>
+    <testcase id="Home" name="Home" classname="Home" file=".maestro/01-home.yaml" time="3.025" timestamp="2026-10-17T04:56:14" status="SUCCESS"/>
+    <testcase id="Settings and Downloads" name="Settings and Downloads" classname="Settings and Downloads" file=".maestro/02-settings.yaml" time="51.746" timestamp="2026-10-17T04:56:18" status="SUCCESS"/>
+    <testcase id="Dictionary" name="Dictionary" classname="Dictionary" file=".maestro/05-dictionary.yaml" time="8.769" timestamp="2026-10-17T04:57:09" status="SUCCESS"/>
+    <testcase id="My Words" name="My Words" classname="My Words" file=".maestro/03-my-words.yaml" time="17.901" timestamp="2026-10-17T04:57:18" status="SUCCESS"/>
+  </testsuite>
+</testsuites>

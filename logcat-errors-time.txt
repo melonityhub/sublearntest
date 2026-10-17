@@ -1,0 +1,260 @@
+--------- beginning of main
+10-17 04:57:18.472 E/MDD     ( 1768): DownloadProgressMonitor: Can't find file group for uri: android://com.google.android.googlequicksearchbox/files/datadownload/shared/public/datadownloadfile_1792212971644_1d48ae4b292cd15bc945ae5ddedb9565d268f7e2
+10-17 04:57:18.576 E/MDD     ( 5717): FileGroupManager: Trying to add expired group enpromo-state-config.
+10-17 04:57:18.669 E/MDD     ( 1768): DownloadProgressMonitor: Can't find file group for uri: android://com.google.android.googlequicksearchbox/files/datadownload/shared/public/datadownloadfile_1792212971646_5e9da2701f510020f2592c1e5b468922569445d7
+10-17 04:57:18.791 E/MDD     ( 1768): DownloadProgressMonitor: Can't find file group for uri: android://com.google.android.googlequicksearchbox/files/datadownload/shared/public/datadownloadfile_1792212971643
+10-17 04:57:18.792 E/MDD     ( 1768): DownloadProgressMonitor: Can't find file group for uri: android://com.google.android.googlequicksearchbox/files/datadownload/shared/public/datadownloadfile_1792212971647_b56351a773b9354cf1ebcacf86f309b6489173ac
+10-17 04:57:18.856 E/SingleDataFileGroupPop( 1768): Failed to add file group 
+10-17 04:57:18.856 E/PhFileGroupPop( 1768): Failed to add file group 
+10-17 04:57:18.856 E/PhFileGroupPop( 1768): Failed to add file group 
+10-17 04:57:18.856 E/PhFileGroupPop( 1768): Failed to add file group 
+10-17 04:57:18.856 E/PhFileGroupPop( 1768): Failed to add file group 
+10-17 04:57:18.856 E/PhFileGroupPop( 1768): Failed to add file group 
+10-17 04:57:18.857 E/d       ( 1768): RuntimeException while executing runnable cb{com.google.apps.tiktok.tracing.ej@359f439} with executor MoreExecutors.directExecutor()
+10-17 04:57:18.857 E/d       ( 1768): java.lang.NullPointerException: Attempt to read from field 'java.lang.String com.google.android.libraries.mdi.download.ae.b' on a null object reference in method 'void com.google.android.libraries.mdi.download.h.bq.gH(java.lang.Object)'
+10-17 04:57:18.857 E/d       ( 1768): 	at com.google.android.libraries.mdi.download.h.bq.gH(PG:2)
+10-17 04:57:18.857 E/d       ( 1768): 	at com.google.apps.tiktok.tracing.ej.gH(PG:2)
+10-17 04:57:18.857 E/d       ( 1768): 	at com.google.common.util.concurrent.cb.run(PG:7)
+10-17 04:57:18.857 E/d       ( 1768): 	at com.google.common.util.concurrent.bf.execute(PG:1)
+10-17 04:57:18.857 E/d       ( 1768): 	at com.google.common.util.concurrent.d.i(PG:1)
+10-17 04:57:18.857 E/d       ( 1768): 	at com.google.common.util.concurrent.d.iq(PG:5)
+10-17 04:57:18.857 E/d       ( 1768): 	at com.google.common.util.concurrent.ci.t(PG:1)
+10-17 04:57:18.857 E/d       ( 1768): 	at com.google.android.libraries.mdi.download.h.bu.b(PG:26)
+10-17 04:57:18.857 E/d       ( 1768): 	at com.google.android.libraries.mdi.download.gs.p(PG:3)
+10-17 04:57:18.857 E/d       ( 1768): 	at com.google.android.libraries.mdi.download.gf.apply(Unknown Source:4)
+10-17 04:57:18.857 E/d       ( 1768): 	at com.google.apps.tiktok.tracing.eo.apply(PG:2)
+10-17 04:57:18.857 E/d       ( 1768): 	at com.google.common.util.concurrent.h.e(PG:2)
+10-17 04:57:18.857 E/d       ( 1768): 	at com.google.common.util.concurrent.j.run(PG:9)
+10-17 04:57:18.857 E/d       ( 1768): 	at com.google.common.util.concurrent.do.run(PG:4)
+10-17 04:57:18.857 E/d       ( 1768): 	at com.google.android.libraries.i.ae.run(PG:1)
+10-17 04:57:18.857 E/d       ( 1768): 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+10-17 04:57:18.857 E/d       ( 1768): 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:644)
+10-17 04:57:18.857 E/d       ( 1768): 	at com.google.android.libraries.i.i.run(PG:2)
+10-17 04:57:18.857 E/d       ( 1768): 	at com.google.android.libraries.i.p.run(PG:4)
+10-17 04:57:18.857 E/d       ( 1768): 	at java.lang.Thread.run(Thread.java:1012)
+10-17 04:57:18.857 E/PhFileGroupPop( 1768): Failed to add file group 
+10-17 04:57:18.857 E/PhFileGroupPop( 1768): Failed to add file group 
+10-17 04:57:18.857 E/PhFileGroupPop( 1768): Failed to add file group 
+10-17 04:57:18.936 E/SingleDataFileGroupPop( 1768): Failed to add file group 
+10-17 04:57:18.936 E/PhFileGroupPop( 1768): Failed to add file group 
+10-17 04:57:18.936 E/PhFileGroupPop( 1768): Failed to add file group 
+10-17 04:57:18.936 E/PhFileGroupPop( 1768): Failed to add file group 
+10-17 04:57:18.936 E/PhFileGroupPop( 1768): Failed to add file group 
+10-17 04:57:18.936 E/PhFileGroupPop( 1768): Failed to add file group 
+10-17 04:57:18.936 E/d       ( 1768): RuntimeException while executing runnable cb{com.google.apps.tiktok.tracing.ej@3e4e6e2} with executor MoreExecutors.directExecutor()
+10-17 04:57:18.936 E/d       ( 1768): java.lang.NullPointerException: Attempt to read from field 'java.lang.String com.google.android.libraries.mdi.download.ae.b' on a null object reference in method 'void com.google.android.libraries.mdi.download.h.bq.gH(java.lang.Object)'
+10-17 04:57:18.936 E/d       ( 1768): 	at com.google.android.libraries.mdi.download.h.bq.gH(PG:2)
+10-17 04:57:18.936 E/d       ( 1768): 	at com.google.apps.tiktok.tracing.ej.gH(PG:2)
+10-17 04:57:18.936 E/d       ( 1768): 	at com.google.common.util.concurrent.cb.run(PG:7)
+10-17 04:57:18.936 E/d       ( 1768): 	at com.google.common.util.concurrent.bf.execute(PG:1)
+10-17 04:57:18.936 E/d       ( 1768): 	at com.google.common.util.concurrent.d.i(PG:1)
+10-17 04:57:18.936 E/d       ( 1768): 	at com.google.common.util.concurrent.d.iq(PG:5)
+10-17 04:57:18.936 E/d       ( 1768): 	at com.google.common.util.concurrent.ci.t(PG:1)
+10-17 04:57:18.936 E/d       ( 1768): 	at com.google.android.libraries.mdi.download.h.bu.b(PG:26)
+10-17 04:57:18.936 E/d       ( 1768): 	at com.google.android.libraries.mdi.download.gs.p(PG:3)
+10-17 04:57:18.936 E/d       ( 1768): 	at com.google.android.libraries.mdi.download.gf.apply(Unknown Source:4)
+10-17 04:57:18.936 E/d       ( 1768): 	at com.google.apps.tiktok.tracing.eo.apply(PG:2)
+10-17 04:57:18.936 E/d       ( 1768): 	at com.google.common.util.concurrent.h.e(PG:2)
+10-17 04:57:18.936 E/d       ( 1768): 	at com.google.common.util.concurrent.j.run(PG:9)
+10-17 04:57:18.936 E/d       ( 1768): 	at com.google.common.util.concurrent.do.run(PG:4)
+10-17 04:57:18.936 E/d       ( 1768): 	at com.google.android.libraries.i.ae.run(PG:1)
+10-17 04:57:18.936 E/d       ( 1768): 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+10-17 04:57:18.936 E/d       ( 1768): 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:644)
+10-17 04:57:18.936 E/d       ( 1768): 	at com.google.android.libraries.i.i.run(PG:2)
+10-17 04:57:18.936 E/d       ( 1768): 	at com.google.android.libraries.i.p.run(PG:4)
+10-17 04:57:18.936 E/d       ( 1768): 	at java.lang.Thread.run(Thread.java:1012)
+10-17 04:57:18.937 E/PhFileGroupPop( 1768): Failed to add file group 
+10-17 04:57:18.937 E/PhFileGroupPop( 1768): Failed to add file group 
+10-17 04:57:18.937 E/PhFileGroupPop( 1768): Failed to add file group 
+10-17 04:57:19.268 E/Pay     ( 5717): [Migration operation] Active tapandpay account not found! [CONTEXT service_id=198 ]
+10-17 04:57:19.849 E/BpTransactionCompletedListener(  397): Failed to transact (-32)
+10-17 04:57:22.720 E/A       ( 1768): onError
+10-17 04:57:22.720 E/A       ( 1768): com.google.android.apps.gsa.shared.speech.a.m: errorCode: 65561, engine: 2
+10-17 04:57:22.720 E/A       ( 1768): 	at com.google.android.apps.gsa.staticplugins.dc.a.e.a(PG:3)
+10-17 04:57:22.720 E/A       ( 1768): 	at com.google.android.apps.gsa.s3.n.hh(PG:1)
+10-17 04:57:22.720 E/A       ( 1768): 	at com.google.cd.g.a.f.e(PG:2)
+10-17 04:57:22.720 E/A       ( 1768): 	at com.google.android.apps.gsa.speech.k.a.g.d(PG:22)
+10-17 04:57:22.720 E/A       ( 1768): 	at com.google.android.apps.gsa.speech.k.a.g.ks(PG:6)
+10-17 04:57:22.720 E/A       ( 1768): 	at com.google.android.apps.gsa.s3.o.e(PG:14)
+10-17 04:57:22.720 E/A       ( 1768): 	at com.google.android.apps.gsa.s3.p.run(PG:1)
+10-17 04:57:22.720 E/A       ( 1768): 	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:487)
+10-17 04:57:22.720 E/A       ( 1768): 	at java.util.concurrent.FutureTask.run(FutureTask.java:264)
+10-17 04:57:22.720 E/A       ( 1768): 	at com.google.android.apps.gsa.shared.util.c.a.e.run(PG:2)
+10-17 04:57:22.720 E/A       ( 1768): 	at com.google.android.apps.gsa.shared.util.c.a.bi.run(PG:1)
+10-17 04:57:22.720 E/A       ( 1768): 	at com.google.android.apps.gsa.shared.util.c.a.bi.run(PG:1)
+10-17 04:57:22.720 E/A       ( 1768): 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+10-17 04:57:22.720 E/A       ( 1768): 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:644)
+10-17 04:57:22.720 E/A       ( 1768): 	at java.lang.Thread.run(Thread.java:1012)
+10-17 04:57:22.720 E/A       ( 1768): 	at com.google.android.apps.gsa.shared.util.c.a.l.run(PG:5)
+10-17 04:57:22.720 E/A       ( 1768): Caused by: com.google.android.apps.gsa.shared.speech.a.o: errorCode: 65586, engine: 2
+10-17 04:57:22.720 E/A       ( 1768): 	... 15 more
+10-17 04:57:22.720 E/A       ( 1768): Caused by: com.google.android.apps.gsa.shared.speech.a.k: errorCode: 401, engine: 2
+10-17 04:57:22.720 E/A       ( 1768): 	at com.google.android.apps.gsa.assistant.shared.n.h.a(PG:5)
+10-17 04:57:22.720 E/A       ( 1768): 	at com.google.android.apps.gsa.s3.producers.j.hE(PG:2)
+10-17 04:57:22.720 E/A       ( 1768): 	at com.google.android.apps.gsa.speech.k.a.g.d(PG:16)
+10-17 04:57:22.720 E/A       ( 1768): 	... 12 more
+10-17 04:57:22.721 E/cr_CronetUrlRequestContext( 1768): Exception in upload method
+10-17 04:57:22.721 E/cr_CronetUrlRequestContext( 1768): com.google.android.apps.gsa.shared.r.d: Error code: 262182
+10-17 04:57:22.721 E/cr_CronetUrlRequestContext( 1768): 	at com.google.android.apps.gsa.shared.ab.bk.d(PG:5)
+10-17 04:57:22.721 E/cr_CronetUrlRequestContext( 1768): 	at com.google.android.libraries.gsa.c.a.ar.d(PG:1)
+10-17 04:57:22.721 E/cr_CronetUrlRequestContext( 1768): 	at com.google.android.libraries.gsa.c.a.bo.b(PG:5)
+10-17 04:57:22.721 E/cr_CronetUrlRequestContext( 1768): 	at com.google.android.libraries.gsa.c.a.e.a(PG:2)
+10-17 04:57:22.721 E/cr_CronetUrlRequestContext( 1768): 	at com.google.android.libraries.gsa.c.a.a.run(PG:2)
+10-17 04:57:22.721 E/cr_CronetUrlRequestContext( 1768): 	at com.google.common.util.concurrent.bf.execute(PG:1)
+10-17 04:57:22.721 E/cr_CronetUrlRequestContext( 1768): 	at com.google.common.util.concurrent.d.i(PG:1)
+10-17 04:57:22.721 E/cr_CronetUrlRequestContext( 1768): 	at com.google.common.util.concurrent.d.l(PG:12)
+10-17 04:57:22.721 E/cr_CronetUrlRequestContext( 1768): 	at com.google.common.util.concurrent.d.cancel(PG:8)
+10-17 04:57:22.721 E/cr_CronetUrlRequestContext( 1768): 	at com.google.common.util.concurrent.d.m(PG:2)
+10-17 04:57:22.721 E/cr_CronetUrlRequestContext( 1768): 	at com.google.common.util.concurrent.j.a(PG:1)
+10-17 04:57:22.721 E/cr_CronetUrlRequestContext( 1768): 	at com.google.common.util.concurrent.d.l(PG:3)
+10-17 04:57:22.721 E/cr_CronetUrlRequestContext( 1768): 	at com.google.common.util.concurrent.d.cancel(PG:8)
+10-17 04:57:22.721 E/cr_CronetUrlRequestContext( 1768): 	at com.google.common.util.concurrent.d.m(PG:2)
+10-17 04:57:22.721 E/cr_CronetUrlRequestContext( 1768): 	at com.google.common.util.concurrent.j.a(PG:1)
+10-17 04:57:22.721 E/cr_CronetUrlRequestContext( 1768): 	at com.google.common.util.concurrent.d.l(PG:3)
+10-17 04:57:22.721 E/cr_CronetUrlRequestContext( 1768): 	at com.google.common.util.concurrent.d.cancel(PG:8)
+10-17 04:57:22.721 E/cr_CronetUrlRequestContext( 1768): 	at com.google.common.util.concurrent.d.m(PG:2)
+10-17 04:57:22.721 E/cr_CronetUrlRequestContext( 1768): 	at com.google.common.util.concurrent.j.a(PG:1)
+10-17 04:57:22.721 E/cr_CronetUrlRequestContext( 1768): 	at com.google.common.util.concurrent.d.l(PG:3)
+10-17 04:57:22.721 E/cr_CronetUrlRequestContext( 1768): 	at com.google.common.util.concurrent.d.cancel(PG:8)
+10-17 04:57:22.721 E/cr_CronetUrlRequestContext( 1768): 	at com.google.common.util.concurrent.d.m(PG:2)
+10-17 04:57:22.721 E/cr_CronetUrlRequestContext( 1768): 	at com.google.common.util.concurrent.j.a(PG:1)
+10-17 04:57:22.721 E/cr_CronetUrlRequestContext( 1768): 	at com.google.common.util.concurrent.d.l(PG:3)
+10-17 04:57:22.721 E/cr_CronetUrlRequestContext( 1768): 	at com.google.common.util.concurrent.d.cancel(PG:8)
+10-17 04:57:22.721 E/cr_CronetUrlRequestContext( 1768): 	at com.google.common.util.concurrent.d.m(PG:2)
+10-17 04:57:22.721 E/cr_CronetUrlRequestContext( 1768): 	at com.google.common.util.concurrent.c.a(PG:1)
+10-17 04:57:22.721 E/cr_CronetUrlRequestContext( 1768): 	at com.google.common.util.concurrent.d.l(PG:3)
+10-17 04:57:22.721 E/cr_CronetUrlRequestContext( 1768): 	at com.google.common.util.concurrent.d.cancel(PG:8)
+10-17 04:57:22.721 E/cr_CronetUrlRequestContext( 1768): 	at com.google.common.util.concurrent.bu.cancel(PG:1)
+10-17 04:57:22.721 E/cr_CronetUrlRequestContext( 1768): 	at com.google.common.util.concurrent.d.cancel(PG:17)
+10-17 04:57:22.721 E/cr_CronetUrlRequestContext( 1768): 	at com.google.android.apps.gsa.staticplugins.bk.b.h.run(PG:2)
+10-17 04:57:22.721 E/cr_CronetUrlRequestContext( 1768): 	at com.google.common.util.concurrent.bf.execute(PG:1)
+10-17 04:57:22.721 E/cr_CronetUrlRequestContext( 1768): 	at com.google.common.util.concurrent.d.i(PG:1)
+10-17 04:57:22.721 E/cr_CronetUrlRequestContext( 1768): 	at com.google.common.util.concurrent.d.l(PG:12)
+10-17 04:57:22.721 E/cr_CronetUrlRequestContext( 1768): 	at com.google.common.util.concurrent.d.cancel(PG:8)
+10-17 04:57:22.721 E/cr_CronetUrlRequestContext( 1768): 	at com.google.common.util.concurrent.d.m(PG:2)
+10-17 04:57:22.721 E/cr_CronetUrlRequestContext( 1768): 	at com.google.common.util.concurrent.j.a(PG:1)
+10-17 04:57:22.721 E/cr_CronetUrlRequestContext( 1768): 	at com.google.common.util.concurrent.d.l(PG:3)
+10-17 04:57:22.721 E/cr_CronetUrlRequestContext( 1768): 	at com.google.common.util.concurrent.d.cancel(PG:8)
+10-17 04:57:22.721 E/cr_CronetUrlRequestContext( 1768): 	at com.google.android.apps.gsa.shared.util.c.aj.a(PG:2)
+10-17 04:57:22.721 E/cr_CronetUrlRequestContext( 1768): 	at com.google.common.util.concurrent.d.l(PG:3)
+10-17 04:57:22.721 E/cr_CronetUrlRequestContext( 1768): 	at com.google.common.util.concurrent.d.cancel(PG:8)
+10-17 04:57:22.721 E/cr_CronetUrlRequestContext( 1768): 	at com.google.common.util.concurrent.d.m(PG:2)
+10-17 04:57:22.721 E/cr_CronetUrlRequestContext( 1768): 	at com.google.common.util.concurrent.c.a(PG:1)
+10-17 04:57:22.721 E/cr_CronetUrlRequestContext( 1768): 	at com.google.common.util.concurrent.d.l(PG:3)
+10-17 04:57:22.721 E/cr_CronetUrlRequestContext( 1768): 	at com.google.common.util.concurrent.d.cancel(PG:8)
+10-17 04:57:22.721 E/cr_CronetUrlRequestContext( 1768): 	at com.google.android.apps.gsa.s3.o.c(PG:2)
+10-17 04:57:22.721 E/cr_CronetUrlRequestContext( 1768): 	at com.google.android.apps.gsa.s3.r.a(PG:1)
+10-17 04:57:22.721 E/cr_CronetUrlRequestContext( 1768): 	at com.google.android.apps.gsa.staticplugins.dc.a.c.e(PG:2)
+10-17 04:57:22.721 E/cr_CronetUrlRequestContext( 1768): 	at com.google.android.apps.gsa.staticplugins.dc.a.c.c(PG:3)
+10-17 04:57:22.721 E/cr_CronetUrlRequestContext( 1768): 	at com.google.android.apps.gsa.staticplugins.dc.a.e.a(PG:5)
+10-17 04:57:22.721 E/cr_CronetUrlRequestContext( 1768): 	at com.google.android.apps.gsa.s3.n.hh(PG:1)
+10-17 04:57:22.721 E/cr_CronetUrlRequestContext( 1768): 	at com.google.cd.g.a.f.e(PG:2)
+10-17 04:57:22.721 E/cr_CronetUrlRequestContext( 1768): 	at com.google.android.apps.gsa.speech.k.a.g.d(PG:22)
+10-17 04:57:22.721 E/cr_CronetUrlRequestContext( 1768): 	at com.google.android.apps.gsa.speech.k.a.g.ks(PG:6)
+10-17 04:57:22.721 E/cr_CronetUrlRequestContext( 1768): 	at com.google.android.apps.gsa.s3.o.e(PG:14)
+10-17 04:57:22.721 E/cr_CronetUrlRequestContext( 1768): 	at com.google.android.apps.gsa.s3.p.run(PG:1)
+10-17 04:57:22.721 E/cr_CronetUrlRequestContext( 1768): 	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:487)
+10-17 04:57:22.721 E/cr_CronetUrlRequestContext( 1768): 	at java.util.concurrent.FutureTask.run(FutureTask.java:264)
+10-17 04:57:22.721 E/cr_CronetUrlRequestContext( 1768): 	at com.google.android.apps.gsa.shared.util.c.a.e.run(PG:2)
+10-17 04:57:22.721 E/cr_CronetUrlRequestContext( 1768): 	at com.google.android.apps.gsa.shared.util.c.a.bi.run(PG:1)
+10-17 04:57:22.721 E/cr_CronetUrlRequestContext( 1768): 	at com.google.android.apps.gsa.shared.util.c.a.bi.run(PG:1)
+10-17 04:57:22.721 E/cr_CronetUrlRequestContext( 1768): 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+10-17 04:57:22.721 E/cr_CronetUrlRequestContext( 1768): 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:644)
+10-17 04:57:22.721 E/cr_CronetUrlRequestContext( 1768): 	at java.lang.Thread.run(Thread.java:1012)
+10-17 04:57:22.721 E/cr_CronetUrlRequestContext( 1768): 	at com.google.android.apps.gsa.shared.util.c.a.l.run(PG:5)
+--------- beginning of system
+10-17 04:57:23.810 E/TaskPersister(  522): File error accessing recents directory (directory doesn't exist?).
+10-17 04:57:36.404 E/libprocessgroup(  522): No such cgroup attribute: /sys/fs/cgroup/uid_4294877489/cgroup.freeze
+10-17 04:57:36.420 E/libprocessgroup(  522): No such cgroup attribute: /sys/fs/cgroup/uid_4294877489/cgroup.freeze
+10-17 04:57:36.534 E/A       ( 1768): Task 255 failed or timed out. Client 7777538444540689 disconnecting from SearchService!
+10-17 04:57:36.534 E/A       ( 1768): java.util.concurrent.CancellationException: Task was cancelled.
+10-17 04:57:36.534 E/A       ( 1768): 	at com.google.common.util.concurrent.d.s(PG:3)
+10-17 04:57:36.534 E/A       ( 1768): 	at com.google.common.util.concurrent.d.get(PG:4)
+10-17 04:57:36.534 E/A       ( 1768): 	at com.google.common.util.concurrent.eb.a(PG:1)
+10-17 04:57:36.534 E/A       ( 1768): 	at com.google.common.util.concurrent.ci.r(PG:2)
+10-17 04:57:36.534 E/A       ( 1768): 	at com.google.common.util.concurrent.cb.run(PG:4)
+10-17 04:57:36.534 E/A       ( 1768): 	at com.google.android.apps.gsa.shared.util.c.a.ba.run(PG:1)
+10-17 04:57:36.534 E/A       ( 1768): 	at android.os.Handler.handleCallback(Handler.java:958)
+10-17 04:57:36.534 E/A       ( 1768): 	at android.os.Handler.dispatchMessage(Handler.java:99)
+10-17 04:57:36.534 E/A       ( 1768): 	at android.os.Looper.loopOnce(Looper.java:205)
+10-17 04:57:36.534 E/A       ( 1768): 	at android.os.Looper.loop(Looper.java:294)
+10-17 04:57:36.534 E/A       ( 1768): 	at android.app.ActivityThread.main(ActivityThread.java:8177)
+10-17 04:57:36.534 E/A       ( 1768): 	at java.lang.reflect.Method.invoke(Native Method)
+10-17 04:57:36.534 E/A       ( 1768): 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:552)
+10-17 04:57:36.534 E/A       ( 1768): 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:971)
+10-17 04:57:36.552 E/BgTaskExecutorImpl( 1768): PERIODIC background task MDD_CELLULAR_CHARGING_TASK was cancelled.
+10-17 04:57:36.552 E/BgTaskExecutorImpl( 1768): java.util.concurrent.CancellationException: Task was cancelled.
+10-17 04:57:36.552 E/BgTaskExecutorImpl( 1768): 	at com.google.common.util.concurrent.d.s(PG:3)
+10-17 04:57:36.552 E/BgTaskExecutorImpl( 1768): 	at com.google.common.util.concurrent.d.get(PG:4)
+10-17 04:57:36.552 E/BgTaskExecutorImpl( 1768): 	at com.google.common.util.concurrent.eb.a(PG:1)
+10-17 04:57:36.552 E/BgTaskExecutorImpl( 1768): 	at com.google.common.util.concurrent.ci.r(PG:2)
+10-17 04:57:36.552 E/BgTaskExecutorImpl( 1768): 	at com.google.common.util.concurrent.cb.run(PG:4)
+10-17 04:57:36.552 E/BgTaskExecutorImpl( 1768): 	at com.google.android.apps.gsa.shared.util.c.a.cf.b(PG:1)
+10-17 04:57:36.552 E/BgTaskExecutorImpl( 1768): 	at com.google.android.apps.gsa.shared.util.c.a.ci.run(PG:1)
+10-17 04:57:36.552 E/BgTaskExecutorImpl( 1768): 	at com.google.android.libraries.i.ae.run(PG:1)
+10-17 04:57:36.552 E/BgTaskExecutorImpl( 1768): 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+10-17 04:57:36.552 E/BgTaskExecutorImpl( 1768): 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:644)
+10-17 04:57:36.552 E/BgTaskExecutorImpl( 1768): 	at com.google.android.libraries.i.i.run(PG:2)
+10-17 04:57:36.552 E/BgTaskExecutorImpl( 1768): 	at com.google.android.libraries.i.p.run(PG:4)
+10-17 04:57:36.552 E/BgTaskExecutorImpl( 1768): 	at java.lang.Thread.run(Thread.java:1012)
+10-17 04:57:36.678 E/A       ( 1768): Task 255 failed or timed out. Client 7777538444540695 disconnecting from SearchService!
+10-17 04:57:36.678 E/A       ( 1768): java.util.concurrent.CancellationException: Task was cancelled.
+10-17 04:57:36.678 E/A       ( 1768): 	at com.google.common.util.concurrent.d.s(PG:3)
+10-17 04:57:36.678 E/A       ( 1768): 	at com.google.common.util.concurrent.d.get(PG:4)
+10-17 04:57:36.678 E/A       ( 1768): 	at com.google.common.util.concurrent.eb.a(PG:1)
+10-17 04:57:36.678 E/A       ( 1768): 	at com.google.common.util.concurrent.ci.r(PG:2)
+10-17 04:57:36.678 E/A       ( 1768): 	at com.google.common.util.concurrent.cb.run(PG:4)
+10-17 04:57:36.678 E/A       ( 1768): 	at com.google.android.apps.gsa.shared.util.c.a.ba.run(PG:1)
+10-17 04:57:36.678 E/A       ( 1768): 	at android.os.Handler.handleCallback(Handler.java:958)
+10-17 04:57:36.678 E/A       ( 1768): 	at android.os.Handler.dispatchMessage(Handler.java:99)
+10-17 04:57:36.678 E/A       ( 1768): 	at android.os.Looper.loopOnce(Looper.java:205)
+10-17 04:57:36.678 E/A       ( 1768): 	at android.os.Looper.loop(Looper.java:294)
+10-17 04:57:36.678 E/A       ( 1768): 	at android.app.ActivityThread.main(ActivityThread.java:8177)
+10-17 04:57:36.678 E/A       ( 1768): 	at java.lang.reflect.Method.invoke(Native Method)
+10-17 04:57:36.678 E/A       ( 1768): 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:552)
+10-17 04:57:36.678 E/A       ( 1768): 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:971)
+10-17 04:57:36.688 E/BgTaskExecutorImpl( 1768): PERIODIC background task MDD_WIFI_CHARGING_TASK was cancelled.
+10-17 04:57:36.688 E/BgTaskExecutorImpl( 1768): java.util.concurrent.CancellationException: Task was cancelled.
+10-17 04:57:36.688 E/BgTaskExecutorImpl( 1768): 	at com.google.common.util.concurrent.d.s(PG:3)
+10-17 04:57:36.688 E/BgTaskExecutorImpl( 1768): 	at com.google.common.util.concurrent.d.get(PG:4)
+10-17 04:57:36.688 E/BgTaskExecutorImpl( 1768): 	at com.google.common.util.concurrent.eb.a(PG:1)
+10-17 04:57:36.688 E/BgTaskExecutorImpl( 1768): 	at com.google.common.util.concurrent.ci.r(PG:2)
+10-17 04:57:36.688 E/BgTaskExecutorImpl( 1768): 	at com.google.common.util.concurrent.cb.run(PG:4)
+10-17 04:57:36.688 E/BgTaskExecutorImpl( 1768): 	at com.google.android.apps.gsa.shared.util.c.a.cf.b(PG:1)
+10-17 04:57:36.688 E/BgTaskExecutorImpl( 1768): 	at com.google.android.apps.gsa.shared.util.c.a.ci.run(PG:1)
+10-17 04:57:36.688 E/BgTaskExecutorImpl( 1768): 	at com.google.android.libraries.i.ae.run(PG:1)
+10-17 04:57:36.688 E/BgTaskExecutorImpl( 1768): 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+10-17 04:57:36.688 E/BgTaskExecutorImpl( 1768): 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:644)
+10-17 04:57:36.688 E/BgTaskExecutorImpl( 1768): 	at com.google.android.libraries.i.i.run(PG:2)
+10-17 04:57:36.688 E/BgTaskExecutorImpl( 1768): 	at com.google.android.libraries.i.p.run(PG:4)
+10-17 04:57:36.688 E/BgTaskExecutorImpl( 1768): 	at java.lang.Thread.run(Thread.java:1012)
+10-17 04:57:36.769 E/TaskPersister(  522): File error accessing recents directory (directory doesn't exist?).
+10-17 04:57:36.855 E/AppOps  (  522): attributionTag VCN not declared in manifest of android
+10-17 04:57:36.866 E/VS.BluetoothShim( 1670): Error locating SCO method
+10-17 04:57:36.866 E/VS.BluetoothShim( 1670): java.lang.NoSuchMethodException: android.bluetooth.BluetoothHeadset.startScoUsingVirtualVoiceCall [class android.bluetooth.BluetoothDevice]
+10-17 04:57:36.866 E/VS.BluetoothShim( 1670): 	at java.lang.Class.getMethod(Class.java:2937)
+10-17 04:57:36.866 E/VS.BluetoothShim( 1670): 	at java.lang.Class.getMethod(Class.java:2449)
+10-17 04:57:36.866 E/VS.BluetoothShim( 1670): 	at com.google.android.apps.gsa.speech.audio.a.l.<clinit>(PG:1)
+10-17 04:57:36.866 E/VS.BluetoothShim( 1670): 	at com.google.android.apps.gsa.speech.audio.a.i.onServiceConnected(PG:1)
+10-17 04:57:36.866 E/VS.BluetoothShim( 1670): 	at android.bluetooth.BluetoothProfileConnector$3.handleMessage(BluetoothProfileConnector.java:234)
+10-17 04:57:36.866 E/VS.BluetoothShim( 1670): 	at android.os.Handler.dispatchMessage(Handler.java:106)
+10-17 04:57:36.866 E/VS.BluetoothShim( 1670): 	at android.os.Looper.loopOnce(Looper.java:205)
+10-17 04:57:36.866 E/VS.BluetoothShim( 1670): 	at android.os.Looper.loop(Looper.java:294)
+10-17 04:57:36.866 E/VS.BluetoothShim( 1670): 	at android.app.ActivityThread.main(ActivityThread.java:8177)
+10-17 04:57:36.866 E/VS.BluetoothShim( 1670): 	at java.lang.reflect.Method.invoke(Native Method)
+10-17 04:57:36.866 E/VS.BluetoothShim( 1670): 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:552)
+10-17 04:57:36.866 E/VS.BluetoothShim( 1670): 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:971)
+10-17 04:57:37.095 E/libprocessgroup(  522): No such cgroup attribute: /sys/fs/cgroup/uid_4294877490/cgroup.freeze
+10-17 04:57:37.096 E/libprocessgroup(  522): No such cgroup attribute: /sys/fs/cgroup/uid_4294877490/cgroup.freeze
+10-17 04:57:37.207 E/TaskPersister(  522): File error accessing recents directory (directory doesn't exist?).
+10-17 04:57:37.262 E/libprocessgroup(  522): No such cgroup attribute: /sys/fs/cgroup/uid_10194/cgroup.freeze
+10-17 04:57:37.264 E/libprocessgroup(  522): No such cgroup attribute: /sys/fs/cgroup/uid_10194/cgroup.freeze
+10-17 04:57:37.268 E/IPCThreadState( 3162): Binder transaction failure: 714910/29202/0
+10-17 04:57:37.268 E/JavaBinder( 3162): !!! FAILED BINDER TRANSACTION !!!  (parcel size = 332)
+10-17 04:57:37.296 E/IPCThreadState(  522): Binder transaction failure: 715067/29202/0
+10-17 04:57:37.363 E/RoleControllerServiceImpl(  851): Default/fallback role holder package doesn't qualify for the role, package: com.google.android.gms.supervision, role: android.app.role.SYSTEM_SUPERVISION
+10-17 04:57:37.374 E/RoleControllerServiceImpl(  851): Default/fallback role holder package doesn't qualify for the role, package: com.google.android.gms, role: android.app.role.SYSTEM_CALL_STREAMING
+10-17 04:57:37.510 E/AppOps  (  522): attributionTag VCN not declared in manifest of android
+10-17 04:57:37.512 E/WorkSourceUtil( 5717): Could not find package: dev.mobile.maestro
+10-17 04:57:37.725 E/externalstorage( 6701): Not starting debugger since process cannot load the jdwp agent.
+10-17 04:57:37.748 E/WorkSourceUtil( 5717): Could not find package: dev.mobile.maestro.test

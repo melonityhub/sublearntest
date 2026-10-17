@@ -1,0 +1,108 @@
+04:56:18.075 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Define variables RUNNING
+04:56:18.076 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Define variables COMPLETED
+04:56:18.076 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Apply configuration RUNNING
+04:56:18.076 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Apply configuration COMPLETED
+04:56:18.077 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Launch app "com.sublearn.app.debug" RUNNING
+04:56:19.373 [ INFO] maestro.Maestro.launchApp$lambda$5: Launching app com.sublearn.app.debug
+04:56:19.373 [ INFO] maestro.Maestro.launchApp$lambda$5: Stopping com.sublearn.app.debug app during launch
+04:56:20.273 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Launch app "com.sublearn.app.debug" COMPLETED
+04:56:20.274 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Assert that "Continue watching" is visible RUNNING
+04:56:24.616 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Assert that "Continue watching" is visible COMPLETED
+04:56:24.617 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Tap on (Optional) "^Settings$" RUNNING
+04:56:25.389 [ INFO] maestro.Maestro.tap-HgV9Ck0: Tapping on element:  UiElement(treeNode=TreeNode(attributes={text=, accessibilityText=Settings, hintText=, ignoreBoundsFiltering=false, resource-id=, clickable=false, bounds=[43,181][106,244], enabled=true, focused=false, checked=false, scrollable=false, selected=false, class=android.view.View, important-for-accessibility=true, error=}, children=[], clickable=false, enabled=true, focused=false, checked=false, selected=false), bounds=Bounds(x=43, y=181, width=63, height=63))
+04:56:27.896 [ INFO] maestro.Maestro.tap-HgV9Ck0: Tap aimed via settled hierarchy
+04:56:27.899 [ INFO] maestro.Maestro.hierarchyBasedTap-ogj28Uc: Tapping at (74, 212) using hierarchy based logic for wait
+04:56:29.793 [ INFO] maestro.Maestro.hierarchyBasedTap-ogj28Uc: Something has changed in the UI judging by view hierarchy. Proceed.
+04:56:29.794 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Tap on (Optional) "^Settings$" COMPLETED
+04:56:29.795 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Wait for animation to end RUNNING
+04:56:29.795 [ INFO] maestro.Maestro.waitForAnimationToEnd$lambda$53: Waiting for animation to end with timeout 15000
+04:56:29.796 [TRACE] maestro.utils.ScreenshotUtils.takeScreenshot: Taking screenshot to byte array
+04:56:29.796 [TRACE] maestro.utils.ScreenshotUtils.takeScreenshot: Taking screenshot to output sink
+04:56:30.221 [TRACE] maestro.utils.ScreenshotUtils.takeScreenshot: Taking screenshot to byte array
+04:56:30.221 [TRACE] maestro.utils.ScreenshotUtils.takeScreenshot: Taking screenshot to output sink
+04:56:31.164 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Wait for animation to end COMPLETED
+04:56:31.165 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Run flow when "^My Words$" is not visible RUNNING
+04:56:38.239 [ INFO] maestro.orchestra.Orchestra.executeCommands: [Command execution] CommandSkipped: null
+04:56:38.241 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Run flow when "^My Words$" is not visible SKIPPED
+04:56:38.241 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Take screenshot drawer RUNNING
+04:56:38.243 [ INFO] maestro.Maestro.takeScreenshot: Taking screenshot
+04:56:38.244 [TRACE] maestro.utils.ScreenshotUtils.takeScreenshot: Taking screenshot to output sink
+04:56:38.702 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Take screenshot drawer COMPLETED
+04:56:38.703 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Tap on (Optional) "^Settings$", Index: 1 RUNNING
+04:56:39.019 [ INFO] maestro.orchestra.Orchestra.executeCommands: [Command execution] CommandWarned: Element not found: Text matching regex: ^Settings$, Index: 1
+04:56:39.196 [ INFO] maestro.Maestro.takeScreenshot: Taking screenshot
+04:56:39.197 [TRACE] maestro.utils.ScreenshotUtils.takeScreenshot: Taking screenshot to output sink
+04:56:39.543 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Tap on (Optional) "^Settings$", Index: 1 WARNED
+04:56:39.544 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Wait for animation to end RUNNING
+04:56:39.545 [ INFO] maestro.Maestro.waitForAnimationToEnd$lambda$53: Waiting for animation to end with timeout 15000
+04:56:39.545 [TRACE] maestro.utils.ScreenshotUtils.takeScreenshot: Taking screenshot to byte array
+04:56:39.546 [TRACE] maestro.utils.ScreenshotUtils.takeScreenshot: Taking screenshot to output sink
+04:56:39.971 [TRACE] maestro.utils.ScreenshotUtils.takeScreenshot: Taking screenshot to byte array
+04:56:39.971 [TRACE] maestro.utils.ScreenshotUtils.takeScreenshot: Taking screenshot to output sink
+04:56:40.618 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Wait for animation to end COMPLETED
+04:56:40.619 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Run flow when "^Search settings$" is not visible RUNNING
+04:56:41.495 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Tap on point (15%,26%) RUNNING
+04:56:41.565 [ INFO] maestro.Maestro.hierarchyBasedTap-ogj28Uc: Tapping at (162, 624) using hierarchy based logic for wait
+04:56:44.283 [ INFO] maestro.Maestro.hierarchyBasedTap-ogj28Uc: Something has changed in the UI judging by view hierarchy. Proceed.
+04:56:44.283 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Tap on point (15%,26%) COMPLETED
+04:56:44.284 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Wait for animation to end RUNNING
+04:56:44.284 [ INFO] maestro.Maestro.waitForAnimationToEnd$lambda$53: Waiting for animation to end with timeout 15000
+04:56:44.284 [TRACE] maestro.utils.ScreenshotUtils.takeScreenshot: Taking screenshot to byte array
+04:56:44.285 [TRACE] maestro.utils.ScreenshotUtils.takeScreenshot: Taking screenshot to output sink
+04:56:46.331 [TRACE] maestro.utils.ScreenshotUtils.takeScreenshot: Taking screenshot to byte array
+04:56:46.332 [TRACE] maestro.utils.ScreenshotUtils.takeScreenshot: Taking screenshot to output sink
+04:56:47.746 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Wait for animation to end COMPLETED
+04:56:47.746 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Run flow when "^Search settings$" is not visible COMPLETED
+04:56:47.746 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Run flow when "^Search settings$" is not visible RUNNING
+04:56:54.806 [ INFO] maestro.orchestra.Orchestra.executeCommands: [Command execution] CommandSkipped: null
+04:56:54.806 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Run flow when "^Search settings$" is not visible SKIPPED
+04:56:54.806 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Take screenshot settings RUNNING
+04:56:54.809 [ INFO] maestro.Maestro.takeScreenshot: Taking screenshot
+04:56:54.811 [TRACE] maestro.utils.ScreenshotUtils.takeScreenshot: Taking screenshot to output sink
+04:56:55.075 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Take screenshot settings COMPLETED
+04:56:55.076 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Run flow when "^Search settings$" is visible RUNNING
+04:56:55.345 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Tap on "^Search settings$" RUNNING
+04:56:55.546 [ INFO] maestro.Maestro.tap-HgV9Ck0: Tapping on element:  UiElement(treeNode=TreeNode(attributes={text=Search settings, accessibilityText=, hintText=, ignoreBoundsFiltering=false, resource-id=, clickable=false, bounds=[179,363][448,419], enabled=true, focused=false, checked=false, scrollable=false, selected=false, class=android.widget.TextView, important-for-accessibility=true, error=}, children=[], clickable=false, enabled=true, focused=false, checked=false, selected=false), bounds=Bounds(x=179, y=363, width=269, height=56))
+04:56:56.837 [ INFO] maestro.Maestro.tap-HgV9Ck0: Tap aimed via settled hierarchy
+04:56:56.838 [ INFO] maestro.Maestro.hierarchyBasedTap-ogj28Uc: Tapping at (313, 391) using hierarchy based logic for wait
+04:56:58.037 [ INFO] maestro.Maestro.hierarchyBasedTap-ogj28Uc: Something has changed in the UI judging by view hierarchy. Proceed.
+04:56:58.038 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Tap on "^Search settings$" COMPLETED
+04:56:58.038 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Input text downloa RUNNING
+04:56:58.039 [ INFO] maestro.Maestro.inputText: Inputting text: downloa
+04:57:02.657 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Input text downloa COMPLETED
+04:57:02.658 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Hide Keyboard RUNNING
+04:57:02.659 [ INFO] maestro.Maestro.hideKeyboard$lambda$12: Hiding Keyboard
+04:57:03.991 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Hide Keyboard COMPLETED
+04:57:03.991 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Wait for animation to end RUNNING
+04:57:03.991 [ INFO] maestro.Maestro.waitForAnimationToEnd$lambda$53: Waiting for animation to end with timeout 15000
+04:57:03.992 [TRACE] maestro.utils.ScreenshotUtils.takeScreenshot: Taking screenshot to byte array
+04:57:03.992 [TRACE] maestro.utils.ScreenshotUtils.takeScreenshot: Taking screenshot to output sink
+04:57:04.268 [TRACE] maestro.utils.ScreenshotUtils.takeScreenshot: Taking screenshot to byte array
+04:57:04.268 [TRACE] maestro.utils.ScreenshotUtils.takeScreenshot: Taking screenshot to output sink
+04:57:05.249 [TRACE] maestro.utils.ScreenshotUtils.takeScreenshot: Taking screenshot to byte array
+04:57:05.249 [TRACE] maestro.utils.ScreenshotUtils.takeScreenshot: Taking screenshot to output sink
+04:57:05.499 [TRACE] maestro.utils.ScreenshotUtils.takeScreenshot: Taking screenshot to byte array
+04:57:05.499 [TRACE] maestro.utils.ScreenshotUtils.takeScreenshot: Taking screenshot to output sink
+04:57:05.986 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Wait for animation to end COMPLETED
+04:57:05.986 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Run flow when "^Search settings$" is visible COMPLETED
+04:57:05.986 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Take screenshot settings-search RUNNING
+04:57:05.987 [ INFO] maestro.Maestro.takeScreenshot: Taking screenshot
+04:57:05.988 [TRACE] maestro.utils.ScreenshotUtils.takeScreenshot: Taking screenshot to output sink
+04:57:06.152 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Take screenshot settings-search COMPLETED
+04:57:06.153 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Tap on (Optional) "^Downloads$" RUNNING
+04:57:06.265 [ INFO] maestro.Maestro.tap-HgV9Ck0: Tapping on element:  UiElement(treeNode=TreeNode(attributes={text=Downloads, accessibilityText=, hintText=, ignoreBoundsFiltering=false, resource-id=, clickable=false, bounds=[42,517][235,573], enabled=true, focused=false, checked=false, scrollable=false, selected=false, class=android.widget.TextView, important-for-accessibility=true, error=}, children=[], clickable=false, enabled=true, focused=false, checked=false, selected=false), bounds=Bounds(x=42, y=517, width=193, height=56))
+04:57:07.471 [ INFO] maestro.Maestro.tap-HgV9Ck0: Tap aimed via settled hierarchy
+04:57:07.472 [ INFO] maestro.Maestro.hierarchyBasedTap-ogj28Uc: Tapping at (138, 545) using hierarchy based logic for wait
+04:57:08.678 [ INFO] maestro.Maestro.hierarchyBasedTap-ogj28Uc: Something has changed in the UI judging by view hierarchy. Proceed.
+04:57:08.679 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Tap on (Optional) "^Downloads$" COMPLETED
+04:57:08.679 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Wait for animation to end RUNNING
+04:57:08.679 [ INFO] maestro.Maestro.waitForAnimationToEnd$lambda$53: Waiting for animation to end with timeout 15000
+04:57:08.680 [TRACE] maestro.utils.ScreenshotUtils.takeScreenshot: Taking screenshot to byte array
+04:57:08.680 [TRACE] maestro.utils.ScreenshotUtils.takeScreenshot: Taking screenshot to output sink
+04:57:08.938 [TRACE] maestro.utils.ScreenshotUtils.takeScreenshot: Taking screenshot to byte array
+04:57:08.938 [TRACE] maestro.utils.ScreenshotUtils.takeScreenshot: Taking screenshot to output sink
+04:57:09.431 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Wait for animation to end COMPLETED
+04:57:09.431 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Take screenshot settings-downloads RUNNING
+04:57:09.432 [ INFO] maestro.Maestro.takeScreenshot: Taking screenshot
+04:57:09.432 [TRACE] maestro.utils.ScreenshotUtils.takeScreenshot: Taking screenshot to output sink
+04:57:09.653 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Take screenshot settings-downloads COMPLETED

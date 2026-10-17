@@ -1,0 +1,20 @@
+UI snapshot run
+repository: melonityhub/sublearntest
+run: https://github.com/melonityhub/sublearntest/actions/runs/39004201323
+attempt: 1
+commit: de38ad79a9e77c14aecd7b1606fbce6a3874a615
+build outcome: success
+screenshot resize: /usr/bin/convert
+date: 2026-10-17T04:57:57Z
+
+PNG files:
+  dictionary.png (88179 bytes)
+  drawer.png (62366 bytes)
+  final-screen.png (92251 bytes)
+  home-settled.png (87054 bytes)
+  home.png (601975 bytes)
+  learn.png (58202 bytes)
+  my-words.png (84150 bytes)
+  settings-downloads.png (195752 bytes)
+  settings-search.png (51178 bytes)
+  settings.png (147672 bytes)

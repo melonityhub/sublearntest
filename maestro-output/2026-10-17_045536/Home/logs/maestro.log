@@ -1,0 +1,12 @@
+04:56:15.019 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Define variables RUNNING
+04:56:15.020 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Define variables COMPLETED
+04:56:15.021 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Apply configuration RUNNING
+04:56:15.022 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Apply configuration COMPLETED
+04:56:15.022 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Launch app "com.sublearn.app.debug" RUNNING
+04:56:15.883 [ INFO] maestro.Maestro.launchApp$lambda$5: Launching app com.sublearn.app.debug
+04:56:15.884 [ INFO] maestro.Maestro.launchApp$lambda$5: Stopping com.sublearn.app.debug app during launch
+04:56:16.237 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Launch app "com.sublearn.app.debug" COMPLETED
+04:56:16.240 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Take screenshot home RUNNING
+04:56:16.242 [ INFO] maestro.Maestro.takeScreenshot: Taking screenshot
+04:56:16.243 [TRACE] maestro.utils.ScreenshotUtils.takeScreenshot: Taking screenshot to output sink
+04:56:17.945 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Take screenshot home COMPLETED

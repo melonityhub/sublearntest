@@ -1,0 +1,508 @@
+Activity Resolver Table:
+  Full MIME Types:
+      text/vtt:
+        e1060ac com.sublearn.app.debug/com.sublearn.app.MainActivity filter 178db98
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "content"
+          Scheme: "file"
+          StaticType: "application/x-subrip"
+          StaticType: "text/plain"
+          StaticType: "text/vtt"
+          StaticType: "text/x-ssa"
+      application/x-mpegurl:
+        e1060ac com.sublearn.app.debug/com.sublearn.app.MainActivity filter 2edfff1
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "http"
+          Scheme: "https"
+          StaticType: "video"
+          StaticType: "application/x-mpegurl"
+          StaticType: "application/vnd.apple.mpegurl"
+          StaticType: "application/dash+xml"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+      application/vnd.apple.mpegurl:
+        e1060ac com.sublearn.app.debug/com.sublearn.app.MainActivity filter 2edfff1
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "http"
+          Scheme: "https"
+          StaticType: "video"
+          StaticType: "application/x-mpegurl"
+          StaticType: "application/vnd.apple.mpegurl"
+          StaticType: "application/dash+xml"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+      application/dash+xml:
+        e1060ac com.sublearn.app.debug/com.sublearn.app.MainActivity filter 2edfff1
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "http"
+          Scheme: "https"
+          StaticType: "video"
+          StaticType: "application/x-mpegurl"
+          StaticType: "application/vnd.apple.mpegurl"
+          StaticType: "application/dash+xml"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+      video/*:
+        e1060ac com.sublearn.app.debug/com.sublearn.app.MainActivity filter 793350a
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "content"
+          Scheme: "file"
+          StaticType: "video"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+        e1060ac com.sublearn.app.debug/com.sublearn.app.MainActivity filter 392d17b
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "video"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+        e1060ac com.sublearn.app.debug/com.sublearn.app.MainActivity filter 2edfff1
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "http"
+          Scheme: "https"
+          StaticType: "video"
+          StaticType: "application/x-mpegurl"
+          StaticType: "application/vnd.apple.mpegurl"
+          StaticType: "application/dash+xml"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+      text/plain:
+        e1060ac com.sublearn.app.debug/com.sublearn.app.MainActivity filter 178db98
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "content"
+          Scheme: "file"
+          StaticType: "application/x-subrip"
+          StaticType: "text/plain"
+          StaticType: "text/vtt"
+          StaticType: "text/x-ssa"
+      text/x-ssa:
+        e1060ac com.sublearn.app.debug/com.sublearn.app.MainActivity filter 178db98
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "content"
+          Scheme: "file"
+          StaticType: "application/x-subrip"
+          StaticType: "text/plain"
+          StaticType: "text/vtt"
+          StaticType: "text/x-ssa"
+      application/x-subrip:
+        e1060ac com.sublearn.app.debug/com.sublearn.app.MainActivity filter 178db98
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "content"
+          Scheme: "file"
+          StaticType: "application/x-subrip"
+          StaticType: "text/plain"
+          StaticType: "text/vtt"
+          StaticType: "text/x-ssa"
+
+  Base MIME Types:
+      text:
+        e1060ac com.sublearn.app.debug/com.sublearn.app.MainActivity filter 178db98
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "content"
+          Scheme: "file"
+          StaticType: "application/x-subrip"
+          StaticType: "text/plain"
+          StaticType: "text/vtt"
+          StaticType: "text/x-ssa"
+        e1060ac com.sublearn.app.debug/com.sublearn.app.MainActivity filter 178db98
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "content"
+          Scheme: "file"
+          StaticType: "application/x-subrip"
+          StaticType: "text/plain"
+          StaticType: "text/vtt"
+          StaticType: "text/x-ssa"
+        e1060ac com.sublearn.app.debug/com.sublearn.app.MainActivity filter 178db98
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "content"
+          Scheme: "file"
+          StaticType: "application/x-subrip"
+          StaticType: "text/plain"
+          StaticType: "text/vtt"
+          StaticType: "text/x-ssa"
+      application:
+        e1060ac com.sublearn.app.debug/com.sublearn.app.MainActivity filter 178db98
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "content"
+          Scheme: "file"
+          StaticType: "application/x-subrip"
+          StaticType: "text/plain"
+          StaticType: "text/vtt"
+          StaticType: "text/x-ssa"
+        e1060ac com.sublearn.app.debug/com.sublearn.app.MainActivity filter 2edfff1
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "http"
+          Scheme: "https"
+          StaticType: "video"
+          StaticType: "application/x-mpegurl"
+          StaticType: "application/vnd.apple.mpegurl"
+          StaticType: "application/dash+xml"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+        e1060ac com.sublearn.app.debug/com.sublearn.app.MainActivity filter 2edfff1
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "http"
+          Scheme: "https"
+          StaticType: "video"
+          StaticType: "application/x-mpegurl"
+          StaticType: "application/vnd.apple.mpegurl"
+          StaticType: "application/dash+xml"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+        e1060ac com.sublearn.app.debug/com.sublearn.app.MainActivity filter 2edfff1
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "http"
+          Scheme: "https"
+          StaticType: "video"
+          StaticType: "application/x-mpegurl"
+          StaticType: "application/vnd.apple.mpegurl"
+          StaticType: "application/dash+xml"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+
+  Wild MIME Types:
+      video:
+        e1060ac com.sublearn.app.debug/com.sublearn.app.MainActivity filter 793350a
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "content"
+          Scheme: "file"
+          StaticType: "video"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+        e1060ac com.sublearn.app.debug/com.sublearn.app.MainActivity filter 392d17b
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "video"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+        e1060ac com.sublearn.app.debug/com.sublearn.app.MainActivity filter 2edfff1
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "http"
+          Scheme: "https"
+          StaticType: "video"
+          StaticType: "application/x-mpegurl"
+          StaticType: "application/vnd.apple.mpegurl"
+          StaticType: "application/dash+xml"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+
+  Schemes:
+      file:
+        e1060ac com.sublearn.app.debug/com.sublearn.app.MainActivity filter 793350a
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "content"
+          Scheme: "file"
+          StaticType: "video"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+        e1060ac com.sublearn.app.debug/com.sublearn.app.MainActivity filter 178db98
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "content"
+          Scheme: "file"
+          StaticType: "application/x-subrip"
+          StaticType: "text/plain"
+          StaticType: "text/vtt"
+          StaticType: "text/x-ssa"
+      http:
+        e1060ac com.sublearn.app.debug/com.sublearn.app.MainActivity filter 2edfff1
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "http"
+          Scheme: "https"
+          StaticType: "video"
+          StaticType: "application/x-mpegurl"
+          StaticType: "application/vnd.apple.mpegurl"
+          StaticType: "application/dash+xml"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+        e1060ac com.sublearn.app.debug/com.sublearn.app.MainActivity filter 8b797d6
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "http"
+          Scheme: "https"
+          Authority: "": -1 WILD
+          Path: "PatternMatcher{GLOB: .*\.mp4}"
+          Path: "PatternMatcher{GLOB: .*\.mkv}"
+          Path: "PatternMatcher{GLOB: .*\.webm}"
+          Path: "PatternMatcher{GLOB: .*\.m3u8}"
+          Path: "PatternMatcher{GLOB: .*\.mpd}"
+      https:
+        e1060ac com.sublearn.app.debug/com.sublearn.app.MainActivity filter 2edfff1
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "http"
+          Scheme: "https"
+          StaticType: "video"
+          StaticType: "application/x-mpegurl"
+          StaticType: "application/vnd.apple.mpegurl"
+          StaticType: "application/dash+xml"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+        e1060ac com.sublearn.app.debug/com.sublearn.app.MainActivity filter 8b797d6
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "http"
+          Scheme: "https"
+          Authority: "": -1 WILD
+          Path: "PatternMatcher{GLOB: .*\.mp4}"
+          Path: "PatternMatcher{GLOB: .*\.mkv}"
+          Path: "PatternMatcher{GLOB: .*\.webm}"
+          Path: "PatternMatcher{GLOB: .*\.m3u8}"
+          Path: "PatternMatcher{GLOB: .*\.mpd}"
+      content:
+        e1060ac com.sublearn.app.debug/com.sublearn.app.MainActivity filter 793350a
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "content"
+          Scheme: "file"
+          StaticType: "video"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+        e1060ac com.sublearn.app.debug/com.sublearn.app.MainActivity filter 178db98
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "content"
+          Scheme: "file"
+          StaticType: "application/x-subrip"
+          StaticType: "text/plain"
+          StaticType: "text/vtt"
+          StaticType: "text/x-ssa"
+
+  Non-Data Actions:
+      android.intent.action.MAIN:
+        e1060ac com.sublearn.app.debug/com.sublearn.app.MainActivity filter b75c175
+          Action: "android.intent.action.MAIN"
+          Category: "android.intent.category.LAUNCHER"
+
+  MIME Typed Actions:
+      android.intent.action.SEND:
+        e1060ac com.sublearn.app.debug/com.sublearn.app.MainActivity filter 392d17b
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "video"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+      android.intent.action.VIEW:
+        e1060ac com.sublearn.app.debug/com.sublearn.app.MainActivity filter 793350a
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "content"
+          Scheme: "file"
+          StaticType: "video"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+        e1060ac com.sublearn.app.debug/com.sublearn.app.MainActivity filter 178db98
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "content"
+          Scheme: "file"
+          StaticType: "application/x-subrip"
+          StaticType: "text/plain"
+          StaticType: "text/vtt"
+          StaticType: "text/x-ssa"
+        e1060ac com.sublearn.app.debug/com.sublearn.app.MainActivity filter 2edfff1
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "http"
+          Scheme: "https"
+          StaticType: "video"
+          StaticType: "application/x-mpegurl"
+          StaticType: "application/vnd.apple.mpegurl"
+          StaticType: "application/dash+xml"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+
+Receiver Resolver Table:
+  Non-Data Actions:
+      androidx.profileinstaller.action.SAVE_PROFILE:
+        bf30a57 com.sublearn.app.debug/androidx.profileinstaller.ProfileInstallReceiver filter 1ed5b62
+          Action: "androidx.profileinstaller.action.SAVE_PROFILE"
+      androidx.profileinstaller.action.INSTALL_PROFILE:
+        bf30a57 com.sublearn.app.debug/androidx.profileinstaller.ProfileInstallReceiver filter 9ec1944
+          Action: "androidx.profileinstaller.action.INSTALL_PROFILE"
+      androidx.profileinstaller.action.SKIP_FILE:
+        bf30a57 com.sublearn.app.debug/androidx.profileinstaller.ProfileInstallReceiver filter 7d1aa2d
+          Action: "androidx.profileinstaller.action.SKIP_FILE"
+      androidx.profileinstaller.action.BENCHMARK_OPERATION:
+        bf30a57 com.sublearn.app.debug/androidx.profileinstaller.ProfileInstallReceiver filter 3b3f4f3
+          Action: "androidx.profileinstaller.action.BENCHMARK_OPERATION"
+
+Domain verification status:
+
+Permissions:
+  Permission [com.sublearn.app.debug.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION] (dc56f01):
+    sourcePackage=com.sublearn.app.debug
+    uid=10192 gids=[] type=0 prot=signature
+    perm=PermissionInfo{a8c1a6 com.sublearn.app.debug.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION}
+    flags=0x0
+
+Registered ContentProviders:
+  com.sublearn.app.debug/com.google.mlkit.common.internal.MlKitInitProvider:
+    Provider{f3f37e7 com.sublearn.app.debug/com.google.mlkit.common.internal.MlKitInitProvider}
+  com.sublearn.app.debug/androidx.startup.InitializationProvider:
+    Provider{49d5f94 com.sublearn.app.debug/androidx.startup.InitializationProvider}
+  com.sublearn.app.debug/androidx.core.content.FileProvider:
+    Provider{a98fa3d com.sublearn.app.debug/androidx.core.content.FileProvider}
+
+ContentProvider Authorities:
+  [com.sublearn.app.debug.mlkitinitprovider]:
+    Provider{f3f37e7 com.sublearn.app.debug/com.google.mlkit.common.internal.MlKitInitProvider}
+      applicationInfo=ApplicationInfo{78f5232 com.sublearn.app.debug}
+  [com.sublearn.app.debug.androidx-startup]:
+    Provider{49d5f94 com.sublearn.app.debug/androidx.startup.InitializationProvider}
+      applicationInfo=ApplicationInfo{7bd6b83 com.sublearn.app.debug}
+  [com.sublearn.app.debug.fileprovider]:
+    Provider{a98fa3d com.sublearn.app.debug/androidx.core.content.FileProvider}
+      applicationInfo=ApplicationInfo{cbae100 com.sublearn.app.debug}
+
+Key Set Manager:
+  [com.sublearn.app.debug]
+      Signing KeySets: 56
+
+Packages:
+  Package [com.sublearn.app.debug] (f2de56f):
+    appId=10192
+    pkg=Package{a6d0d2c com.sublearn.app.debug}
+    codePath=/data/app/~~SEMd-o-UKKlE4SsORMh07A==/com.sublearn.app.debug--H5hc1W9nFMD172eMX5dlw==
+    resourcePath=/data/app/~~SEMd-o-UKKlE4SsORMh07A==/com.sublearn.app.debug--H5hc1W9nFMD172eMX5dlw==
+    legacyNativeLibraryDir=/data/app/~~SEMd-o-UKKlE4SsORMh07A==/com.sublearn.app.debug--H5hc1W9nFMD172eMX5dlw==/lib
+    extractNativeLibs=false
+    primaryCpuAbi=x86_64
+    secondaryCpuAbi=null
+    cpuAbiOverride=null
+    versionCode=30000 minSdk=26 targetSdk=35
+    minExtensionVersions=[]
+    versionName=3.0.0-debug
+    usesNonSdkApi=false
+    splits=[base]
+    apkSigningVersion=2
+    flags=[ DEBUGGABLE HAS_CODE ALLOW_CLEAR_USER_DATA ALLOW_BACKUP ]
+    privateFlags=[ PRIVATE_FLAG_ACTIVITIES_RESIZE_MODE_RESIZEABLE_VIA_SDK_VERSION ALLOW_AUDIO_PLAYBACK_CAPTURE HAS_DOMAIN_URLS PARTIALLY_DIRECT_BOOT_AWARE PRIVATE_FLAG_ALLOW_NATIVE_HEAP_POINTER_TAGGING ]
+    forceQueryable=false
+    dataDir=/data/user/0/com.sublearn.app.debug
+    supportsScreens=[small, medium, large, xlarge, resizeable, anyDensity]
+    usesOptionalLibraries:
+      androidx.window.extensions
+      androidx.window.sidecar
+    usesOptionalNativeLibraries:
+      libOpenCL.so
+      libOpenCL-car.so
+      libOpenCL-pixel.so
+    usesLibraryFiles:
+      /system_ext/framework/androidx.window.extensions.jar
+      /system_ext/framework/androidx.window.sidecar.jar
+    timeStamp=2026-10-17 04:55:17
+    lastUpdateTime=2026-10-17 04:55:20
+    installerPackageName=null
+    installerPackageUid=-1
+    initiatingPackageName=com.android.shell
+    originatingPackageName=null
+    packageSource=1
+    appMetadataFilePath=null
+    signatures=PackageSignatures{67a33f5 version:2, signatures:[60784ff9], past signatures:[]}
+    installPermissionsFixed=true
+    pkgFlags=[ DEBUGGABLE HAS_CODE ALLOW_CLEAR_USER_DATA ALLOW_BACKUP ]
+    privatePkgFlags=[ PRIVATE_FLAG_ACTIVITIES_RESIZE_MODE_RESIZEABLE_VIA_SDK_VERSION ALLOW_AUDIO_PLAYBACK_CAPTURE HAS_DOMAIN_URLS PARTIALLY_DIRECT_BOOT_AWARE PRIVATE_FLAG_ALLOW_NATIVE_HEAP_POINTER_TAGGING ]
+    apexModuleName=null
+    declared permissions:
+      com.sublearn.app.debug.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION: prot=signature
+    requested permissions:
+      android.permission.INTERNET
+      android.permission.ACCESS_NETWORK_STATE
+      android.permission.WAKE_LOCK
+      android.permission.FOREGROUND_SERVICE
+      com.sublearn.app.debug.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+    install permissions:
+      com.sublearn.app.debug.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION: granted=true
+      android.permission.FOREGROUND_SERVICE: granted=true
+      android.permission.INTERNET: granted=true
+      android.permission.ACCESS_NETWORK_STATE: granted=true
+      android.permission.WAKE_LOCK: granted=true
+    User 0: ceDataInode=320353 installed=true hidden=false suspended=false distractionFlags=0 stopped=false notLaunched=false enabled=0 instant=false virtual=false
+      installReason=0
+      firstInstallTime=2026-10-17 04:55:20
+      uninstallReason=0
+      overlay paths:
+        /product/overlay/EmulationPixel6/EmulationPixel6Overlay.apk
+        /product/overlay/NavigationBarModeGestural/NavigationBarModeGesturalOverlay.apk
+      legacy overlay paths:
+        /product/overlay/EmulationPixel6/EmulationPixel6Overlay.apk
+        /product/overlay/NavigationBarModeGestural/NavigationBarModeGesturalOverlay.apk
+      gids=[3003]
+      runtime permissions:
+
+Queries:
+  system apps queryable: false
+  queries via forceQueryable:
+  queries via package name:
+  queries via component:
+    com.google.android.settings.intelligence:
+      com.sublearn.app.debug
+    com.google.android.apps.restore:
+      com.sublearn.app.debug
+    com.google.android.apps.wellbeing:
+      com.sublearn.app.debug
+    com.google.android.dialer:
+      com.sublearn.app.debug
+    [com.google.android.gsf,com.google.android.gms]:
+      com.sublearn.app.debug
+    com.google.android.apps.messaging:
+      com.sublearn.app.debug
+    com.google.android.youtube:
+      com.sublearn.app.debug
+    com.google.android.gm:
+      com.sublearn.app.debug
+    com.google.android.apps.photos:
+      com.sublearn.app.debug
+    com.google.android.calendar:
+      com.sublearn.app.debug
+    com.google.android.contacts:
+      com.sublearn.app.debug
+    com.google.android.apps.maps:
+      com.sublearn.app.debug
+    com.google.android.apps.docs:
+      com.sublearn.app.debug
+    com.google.android.apps.youtube.music:
+      com.sublearn.app.debug
+    com.google.android.apps.wallpaper:
+      com.sublearn.app.debug
+    com.android.systemui.accessibility.accessibilitymenu:
+      com.sublearn.app.debug
+  queryable via interaction:
+    User 0:
+      [android,com.android.dynsystem,com.android.providers.settings,com.android.location.fused,com.android.keychain,com.android.wallpaperbackup,com.android.inputdevices,com.android.emulator.multidisplay,com.android.localtransport,com.android.server.telecom,com.android.settings]:
+        com.sublearn.app.debug
+      [com.google.android.gsf,com.google.android.gms]:
+        com.sublearn.app.debug
+      com.google.android.inputmethod.latin:
+        com.sublearn.app.debug
+  queryable via uses-library:
+
+Dexopt state:
+  [com.sublearn.app.debug]
+    path: /data/app/~~SEMd-o-UKKlE4SsORMh07A==/com.sublearn.app.debug--H5hc1W9nFMD172eMX5dlw==/base.apk
+      x86_64: [status=run-from-apk] [reason=unknown] [primary-abi]
+        [location is error]
+
+Compiler stats:
+  [com.sublearn.app.debug]
+    (No recorded stats)

@@ -1,0 +1,27 @@
+04:56:04.535 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Define variables RUNNING
+04:56:04.536 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Define variables COMPLETED
+04:56:04.537 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Apply configuration RUNNING
+04:56:04.537 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Apply configuration COMPLETED
+04:56:04.537 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Launch app "com.sublearn.app.debug" RUNNING
+04:56:05.609 [ INFO] maestro.Maestro.launchApp$lambda$5: Launching app com.sublearn.app.debug
+04:56:05.610 [ INFO] maestro.Maestro.launchApp$lambda$5: Stopping com.sublearn.app.debug app during launch
+04:56:05.997 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Launch app "com.sublearn.app.debug" COMPLETED
+04:56:05.997 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Assert that "Continue watching" is visible RUNNING
+04:56:10.290 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Assert that "Continue watching" is visible COMPLETED
+04:56:10.291 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Tap on (Optional) "^Learn$" RUNNING
+04:56:10.916 [ INFO] maestro.Maestro.tap-HgV9Ck0: Tapping on element:  UiElement(treeNode=TreeNode(attributes={text=Learn, accessibilityText=, hintText=, ignoreBoundsFiltering=false, resource-id=, clickable=false, bounds=[638,2246][717,2302], enabled=true, focused=false, checked=false, scrollable=false, selected=false, class=android.widget.TextView, important-for-accessibility=true, error=}, children=[], clickable=false, enabled=true, focused=false, checked=false, selected=false), bounds=Bounds(x=638, y=2246, width=79, height=56))
+04:56:12.608 [ INFO] maestro.Maestro.tap-HgV9Ck0: Tap aimed via settled hierarchy
+04:56:12.616 [ INFO] maestro.Maestro.hierarchyBasedTap-ogj28Uc: Tapping at (677, 2274) using hierarchy based logic for wait
+04:56:13.774 [ INFO] maestro.Maestro.hierarchyBasedTap-ogj28Uc: Something has changed in the UI judging by view hierarchy. Proceed.
+04:56:13.775 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Tap on (Optional) "^Learn$" COMPLETED
+04:56:13.775 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Wait for animation to end RUNNING
+04:56:13.776 [ INFO] maestro.Maestro.waitForAnimationToEnd$lambda$53: Waiting for animation to end with timeout 15000
+04:56:13.776 [TRACE] maestro.utils.ScreenshotUtils.takeScreenshot: Taking screenshot to byte array
+04:56:13.776 [TRACE] maestro.utils.ScreenshotUtils.takeScreenshot: Taking screenshot to output sink
+04:56:14.091 [TRACE] maestro.utils.ScreenshotUtils.takeScreenshot: Taking screenshot to byte array
+04:56:14.092 [TRACE] maestro.utils.ScreenshotUtils.takeScreenshot: Taking screenshot to output sink
+04:56:14.753 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Wait for animation to end COMPLETED
+04:56:14.753 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Take screenshot learn RUNNING
+04:56:14.754 [ INFO] maestro.Maestro.takeScreenshot: Taking screenshot
+04:56:14.755 [TRACE] maestro.utils.ScreenshotUtils.takeScreenshot: Taking screenshot to output sink
+04:56:14.920 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Take screenshot learn COMPLETED

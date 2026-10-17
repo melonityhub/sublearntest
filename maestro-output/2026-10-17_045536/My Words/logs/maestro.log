@@ -1,0 +1,43 @@
+04:57:18.597 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Define variables RUNNING
+04:57:18.597 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Define variables COMPLETED
+04:57:18.598 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Apply configuration RUNNING
+04:57:18.598 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Apply configuration COMPLETED
+04:57:18.599 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Launch app "com.sublearn.app.debug" RUNNING
+04:57:19.706 [ INFO] maestro.Maestro.launchApp$lambda$5: Launching app com.sublearn.app.debug
+04:57:19.706 [ INFO] maestro.Maestro.launchApp$lambda$5: Stopping com.sublearn.app.debug app during launch
+04:57:20.314 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Launch app "com.sublearn.app.debug" COMPLETED
+04:57:20.316 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Assert that "Continue watching" is visible RUNNING
+04:57:23.144 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Assert that "Continue watching" is visible COMPLETED
+04:57:23.144 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Tap on (Optional) "^Settings$" RUNNING
+04:57:23.647 [ INFO] maestro.Maestro.tap-HgV9Ck0: Tapping on element:  UiElement(treeNode=TreeNode(attributes={text=, accessibilityText=Settings, hintText=, ignoreBoundsFiltering=false, resource-id=, clickable=false, bounds=[43,181][106,244], enabled=true, focused=false, checked=false, scrollable=false, selected=false, class=android.view.View, important-for-accessibility=true, error=}, children=[], clickable=false, enabled=true, focused=false, checked=false, selected=false), bounds=Bounds(x=43, y=181, width=63, height=63))
+04:57:24.887 [ INFO] maestro.Maestro.tap-HgV9Ck0: Tap aimed via settled hierarchy
+04:57:24.888 [ INFO] maestro.Maestro.hierarchyBasedTap-ogj28Uc: Tapping at (74, 212) using hierarchy based logic for wait
+04:57:25.778 [ INFO] maestro.Maestro.hierarchyBasedTap-ogj28Uc: Something has changed in the UI judging by view hierarchy. Proceed.
+04:57:25.779 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Tap on (Optional) "^Settings$" COMPLETED
+04:57:25.779 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Wait for animation to end RUNNING
+04:57:25.779 [ INFO] maestro.Maestro.waitForAnimationToEnd$lambda$53: Waiting for animation to end with timeout 15000
+04:57:25.779 [TRACE] maestro.utils.ScreenshotUtils.takeScreenshot: Taking screenshot to byte array
+04:57:25.780 [TRACE] maestro.utils.ScreenshotUtils.takeScreenshot: Taking screenshot to output sink
+04:57:25.979 [TRACE] maestro.utils.ScreenshotUtils.takeScreenshot: Taking screenshot to byte array
+04:57:25.979 [TRACE] maestro.utils.ScreenshotUtils.takeScreenshot: Taking screenshot to output sink
+04:57:26.370 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Wait for animation to end COMPLETED
+04:57:26.370 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Run flow when "^My Words$" is not visible RUNNING
+04:57:33.431 [ INFO] maestro.orchestra.Orchestra.executeCommands: [Command execution] CommandSkipped: null
+04:57:33.431 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Run flow when "^My Words$" is not visible SKIPPED
+04:57:33.431 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Tap on (Optional) "^My Words$" RUNNING
+04:57:33.507 [ INFO] maestro.Maestro.tap-HgV9Ck0: Tapping on element:  UiElement(treeNode=TreeNode(attributes={text=My Words, accessibilityText=, hintText=, ignoreBoundsFiltering=false, resource-id=, clickable=false, bounds=[158,334][332,390], enabled=true, focused=false, checked=false, scrollable=false, selected=false, class=android.widget.TextView, important-for-accessibility=true, error=}, children=[], clickable=false, enabled=true, focused=false, checked=false, selected=false), bounds=Bounds(x=158, y=334, width=174, height=56))
+04:57:34.743 [ INFO] maestro.Maestro.tap-HgV9Ck0: Tap aimed via settled hierarchy
+04:57:34.743 [ INFO] maestro.Maestro.hierarchyBasedTap-ogj28Uc: Tapping at (245, 362) using hierarchy based logic for wait
+04:57:35.701 [ INFO] maestro.Maestro.hierarchyBasedTap-ogj28Uc: Something has changed in the UI judging by view hierarchy. Proceed.
+04:57:35.701 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Tap on (Optional) "^My Words$" COMPLETED
+04:57:35.702 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Wait for animation to end RUNNING
+04:57:35.702 [ INFO] maestro.Maestro.waitForAnimationToEnd$lambda$53: Waiting for animation to end with timeout 15000
+04:57:35.702 [TRACE] maestro.utils.ScreenshotUtils.takeScreenshot: Taking screenshot to byte array
+04:57:35.702 [TRACE] maestro.utils.ScreenshotUtils.takeScreenshot: Taking screenshot to output sink
+04:57:35.886 [TRACE] maestro.utils.ScreenshotUtils.takeScreenshot: Taking screenshot to byte array
+04:57:35.886 [TRACE] maestro.utils.ScreenshotUtils.takeScreenshot: Taking screenshot to output sink
+04:57:36.262 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Wait for animation to end COMPLETED
+04:57:36.263 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Take screenshot my-words RUNNING
+04:57:36.263 [ INFO] maestro.Maestro.takeScreenshot: Taking screenshot
+04:57:36.264 [TRACE] maestro.utils.ScreenshotUtils.takeScreenshot: Taking screenshot to output sink
+04:57:36.411 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Take screenshot my-words COMPLETED

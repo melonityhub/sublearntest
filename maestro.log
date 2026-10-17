@@ -1,0 +1,24 @@
+Anonymous analytics enabled. To opt out, set MAESTRO_CLI_NO_ANALYTICS environment variable to any value before running Maestro.
+
+2.11.0
+
+Waiting for flows to complete...
+[Passed] Home settled (13s)
+[Passed] Learn (10s)
+[Passed] Home (3s)
+[Passed] Settings and Downloads (52s)
+[Passed] Dictionary (9s)
+[Passed] My Words (18s)
+
+6/6 Flows Passed in 1m 45s
+
+maestro-output/2026-10-17_045536/Settings and Downloads/takeScreenshot/settings-downloads.png
+maestro-output/2026-10-17_045536/Settings and Downloads/takeScreenshot/settings.png
+maestro-output/2026-10-17_045536/Settings and Downloads/takeScreenshot/drawer.png
+maestro-output/2026-10-17_045536/Settings and Downloads/takeScreenshot/settings-search.png
+maestro-output/2026-10-17_045536/Settings and Downloads/screenshots/step-009-tapOnElement-^Settings$.png
+maestro-output/2026-10-17_045536/Dictionary/takeScreenshot/dictionary.png
+maestro-output/2026-10-17_045536/Learn/takeScreenshot/learn.png
+maestro-output/2026-10-17_045536/My Words/takeScreenshot/my-words.png
+maestro-output/2026-10-17_045536/Home/takeScreenshot/home.png
+maestro-output/2026-10-17_045536/Home settled/takeScreenshot/home-settled.png
