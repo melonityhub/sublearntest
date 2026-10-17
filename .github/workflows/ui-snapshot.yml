@@ -1,0 +1,278 @@
+# Manual UI snapshot run.
+#
+# Builds the debug APK of animalrender/SubLearn (cloned at run time into ./sublearn), boots an
+# Android emulator with KVM, drives the app with the Maestro flows in .maestro/, then publishes the
+# screenshots, logcat and build logs to the orphan branch `ui-snapshots`.
+#
+# The publish step is `if: always()`, so a red build or a failed flow still leaves the logs on the
+# branch; that branch is the only place an agent in the sandbox can read the failure from (the
+# Actions log and artifact hosts are not reachable there, see docs/AGENT_REQUESTS.md REQ-3).
+name: UI snapshots
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ui-snapshot-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  ANDROID_HOME: /usr/local/lib/android/sdk
+  SUBLEARN_REPO: https://github.com/animalrender/SubLearn.git
+  APP_ID: com.sublearn.app.debug
+  SNAPSHOT_BRANCH: ui-snapshots
+
+jobs:
+  snapshots:
+    name: Build, run on emulator, publish
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+
+    steps:
+      - name: Checkout this repository (the Maestro flows live here)
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@de7274f081f381c8f8158605e0321c36c376e2e6 # v6.0.1
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@be39fa834029ff78f1a44aa3bb0819b8fc2bd8fd # v4.0.4
+
+      - name: Install platform 35 and build tools 35.0.0
+        run: |
+          yes | sdkmanager --licenses >/dev/null 2>&1 || true
+          sdkmanager "platforms;android-35" "build-tools;35.0.0" "platform-tools"
+
+      - name: Clone SubLearn
+        run: git clone --depth 1 "$SUBLEARN_REPO" sublearn
+
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@b9bee63ef481cc545e4517ec730544a4d8b1dfa0 # v6.4.0
+        with:
+          # The cache is written on main and read by the retries, which is what keeps a cold
+          # dependency graph from costing ~10 minutes on every attempt.
+          cache-read-only: false
+
+      - name: Build the debug APK
+        id: build
+        # A failed build must not stop the log-publishing tail of the job.
+        continue-on-error: true
+        shell: bash
+        run: |
+          set -o pipefail
+          cd sublearn
+          ./gradlew assembleDebug --stacktrace --console=plain 2>&1 | tee "$GITHUB_WORKSPACE/build.log"
+          status=${PIPESTATUS[0]}
+          echo "gradle exit code: $status" | tee -a "$GITHUB_STEP_SUMMARY"
+          exit "$status"
+
+      - name: Locate the debug APK
+        id: apk
+        if: steps.build.outcome == 'success'
+        shell: bash
+        run: |
+          set -euo pipefail
+          dir=sublearn/app/build/outputs/apk/debug
+          {
+            echo "APKs in $dir:"
+            find "$dir" -maxdepth 1 -type f -name '*.apk' -printf '  %f (%s bytes)\n' | sort
+          } | tee apk-list.txt
+          # The ABI split produces app-universal-debug.apk plus one APK per ABI. The universal one
+          # is the safe choice for the emulator; the x86_64 split is the fallback.
+          apk=$(ls "$dir"/app-universal-debug.apk 2>/dev/null || true)
+          if [ -z "$apk" ]; then
+            apk=$(ls "$dir"/*x86_64*debug*.apk 2>/dev/null | head -1 || true)
+          fi
+          if [ -z "$apk" ]; then
+            apk=$(ls "$dir"/*.apk 2>/dev/null | head -1 || true)
+          fi
+          if [ -z "$apk" ]; then
+            echo "::error::no debug APK was produced"
+            exit 1
+          fi
+          echo "apk=$apk" >> "$GITHUB_OUTPUT"
+          echo "using $apk" | tee -a "$GITHUB_STEP_SUMMARY"
+
+      - name: Enable KVM
+        if: steps.build.outcome == 'success'
+        run: |
+          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' \
+            | sudo tee /etc/udev/rules.d/99-kvm.rules
+          sudo udevadm control --reload-rules
+          sudo udevadm trigger --name-match=kvm
+          ls -l /dev/kvm || true
+
+      - name: Run the app on an emulator and take screenshots
+        id: maestro
+        if: steps.build.outcome == 'success'
+        continue-on-error: true
+        uses: reactivecircus/android-emulator-runner@c9c93e6ba9c4194322e114c40970d5983d9a07cc # v2.38.0
+        with:
+          api-level: 34
+          arch: x86_64
+          target: google_apis
+          disable-animations: true
+          emulator-options: -no-window -no-audio -no-boot-anim -gpu swiftshader_indirect
+          script: |
+            set -uo pipefail
+            cd "$GITHUB_WORKSPACE"
+
+            APK="${{ steps.apk.outputs.apk }}"
+            echo "== adb devices =="
+            adb devices
+
+            echo "== install $APK =="
+            INSTALL=1
+            if adb install -r -t "$APK" 2>&1 | tee install.log; then
+              INSTALL=0
+            fi
+            echo "adb install exit code: $INSTALL"
+
+            echo "== clear logcat and start state =="
+            adb logcat -c || true
+            adb shell am force-stop "$APP_ID" || true
+
+            echo "== install Maestro CLI =="
+            curl -Ls "https://get.maestro.mobile.dev" | bash 2>&1 | tee maestro-install.log || true
+            export PATH="$PATH:$HOME/.maestro/bin"
+            maestro --version 2>&1 | tee -a maestro.log || true
+
+            echo "== run the flows =="
+            mkdir -p maestro-output
+            MAESTRO_EXIT=1
+            if maestro test \
+              --test-output-dir="$GITHUB_WORKSPACE/maestro-output" \
+              --format junit \
+              --output="$GITHUB_WORKSPACE/maestro-report.xml" \
+              "$GITHUB_WORKSPACE/.maestro" 2>&1 | tee -a maestro.log; then
+              MAESTRO_EXIT=0
+            fi
+            echo "maestro exit code: $MAESTRO_EXIT"
+
+            echo "== collect device logs =="
+            adb logcat -d -v threadtime > logcat.txt || true
+            adb logcat -d '*:E' > logcat-errors.txt || true
+            adb shell dumpsys package "$APP_ID" > package-dump.txt 2>&1 || true
+            adb exec-out screencap -p > final-screen.png || true
+
+            echo "== screenshots Maestro produced =="
+            find maestro-output -type f -name '*.png' -print | tee -a maestro.log || true
+
+            if [ "$INSTALL" -ne 0 ]; then
+              exit "$INSTALL"
+            fi
+            exit "$MAESTRO_EXIT"
+
+      - name: Collect screenshots and logs
+        if: always()
+        shell: bash
+        run: |
+          set -uo pipefail
+          rm -rf out
+          mkdir -p out
+
+          resize() {
+            # $1 source, $2 destination
+            if command -v magick >/dev/null 2>&1; then
+              magick "$1" -resize 600x "$2" 2>/dev/null && return 0
+            fi
+            if command -v convert >/dev/null 2>&1; then
+              convert "$1" -resize 600x "$2" 2>/dev/null && return 0
+            fi
+            cp "$1" "$2"
+          }
+
+          # Every takeScreenshot output, flattened to <name>.png in the branch root, resized to a
+          # 600 px width with ImageMagick. Later files with the same basename win, which is fine:
+          # the flows use distinct names.
+          count=0
+          while IFS= read -r png; do
+            name=$(basename "$png")
+            resize "$png" "out/$name"
+            count=$((count + 1))
+          done < <(find maestro-output -type f -path '*/takeScreenshot/*' -name '*.png' 2>/dev/null | sort)
+          if [ "$count" -eq 0 ]; then
+            # Fallback: a manual screenshot taken with adb when Maestro itself failed to start.
+            for png in final-screen.png; do
+              if [ -f "$png" ]; then
+                resize "$png" "out/$png"
+                count=$((count + 1))
+              fi
+            done
+          fi
+          echo "resized $count screenshot(s)"
+
+          # Logs: the build, the Maestro session, the device's error buffer and the APK list.
+          for f in build.log maestro.log maestro-install.log install.log logcat.txt logcat-errors.txt \
+                   package-dump.txt apk-list.txt maestro-report.xml final-screen.png; do
+            if [ -f "$f" ]; then cp "$f" "out/$f"; fi
+          done
+          if [ -d maestro-output ]; then
+            cp -r maestro-output "out/maestro-output" 2>/dev/null || true
+          fi
+
+          {
+            echo "UI snapshot run"
+            echo "repository: $GITHUB_REPOSITORY"
+            echo "run: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
+            echo "attempt: $GITHUB_RUN_ATTEMPT"
+            echo "commit: $GITHUB_SHA"
+            echo "build outcome: ${{ steps.build.outcome }}"
+            echo "date: $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+            echo
+            echo "PNG files:"
+            find out -maxdepth 1 -type f -name '*.png' -printf '  %f (%s bytes)\n' | sort
+          } > out/run-info.txt
+
+          {
+            echo "# UI snapshots — run $GITHUB_RUN_ID"
+            echo
+            echo "Screenshots are resized to 600 px wide. Screen recordings and the full-size captures,"
+            echo "when the flows produced them, are in \`maestro-output/\`."
+            echo
+            echo "Run: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
+            echo
+            echo "| file | bytes |"
+            echo "| --- | --- |"
+            find out -maxdepth 1 -type f -name '*.png' -printf '| %f | %s |\n' | sort
+          } > out/README.md
+
+      - name: Upload the artifact
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: ui-snapshots
+          path: |
+            out/
+            maestro-output/
+          if-no-files-found: warn
+          retention-days: 14
+
+      - name: Publish to the ui-snapshots branch
+        # Last on purpose, and `always()` on purpose: this is the copy of the result that survives
+        # even when every host reachable from the agent sandbox refuses the Actions log and
+        # artifact endpoints.
+        if: always()
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          cd out
+          git init -b "$SNAPSHOT_BRANCH"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "UI snapshots for run ${GITHUB_RUN_ID} (attempt ${GITHUB_RUN_ATTEMPT})" \
+            || echo "nothing to commit"
+          git push -f \
+            "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" \
+            "HEAD:${SNAPSHOT_BRANCH}"

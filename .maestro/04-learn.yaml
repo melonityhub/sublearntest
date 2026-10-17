@@ -1,0 +1,12 @@
+# The Learn tab (bottom navigation).
+# tab_learn = "Learn" in core/designsystem/src/main/res/values/strings.xml.
+appId: com.sublearn.app.debug
+name: Learn
+---
+- launchApp
+- waitForAnimationToEnd
+- tapOn:
+    text: "^Learn$"
+    optional: true
+- waitForAnimationToEnd
+- takeScreenshot: learn

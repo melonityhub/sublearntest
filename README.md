@@ -1,1 +1,147 @@
-# sublearntest
+# SubLearn
+
+Learn English from real video: an offline-first Android player with two independent subtitle layers,
+tap-to-translate, shadowing tools, your own word list and an optional AI helper for the lines that
+refuse to make sense.
+
+No ads, no accounts, no telemetry, no paywall.
+
+## Why this app exists
+
+Most players show subtitles; most learning apps show sentences out of context. SubLearn puts the
+learning tools on top of the video you actually want to watch: the line you are reading stays where
+you put it, a tap gives you the word, a long tap gives you the line, and the block can be repeated
+with a pause that is computed from how long it takes to read it.
+
+The default UI language is English and the default translation language is Persian (RTL). The design
+of the settings, string and font layers does not assume either: see [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md#adding-a-language).
+
+## Where to find learning controls
+
+**Settings → Player learning** controls the video's Learning/Entertainment mode, CEFR level and card
+appearance. Learning adds automatic offline word/phrase translations in a quiet corner; Entertainment
+keeps manual subtitle lookup without automatic cards. Everything that has to be downloaded — the
+offline translation model, the lexicon and dictionary packs, the accuracy models and the accuracy
+profile — is under **Settings → Downloads**. The **Learn tab** is reserved for
+future browser/PDF/image learning and currently shows only Coming soon.
+
+## What works today
+
+- **Local files and streams** through Media3 (ExoPlayer): seek, speed, PiP, readable recent-video
+  navigation, embedded subtitle tracks, and background-safe playback while you navigate the app.
+- **Player controls**: transparent top toolbar, a dockable single-row action rail, and bottom-only
+  transport; arrange actions across the top, second row, playback row or floating layer. Dragging the
+  seek line previews the video and subtitles before release, and orientation can follow the sensor.
+- **Separate audio management**: choose embedded audio, attach an external audio file, adjust player
+  volume and mute without changing the system volume.
+- **Two subtitle layers** (learning + translation), each accepting several SRT / WebVTT / ASS tracks,
+  with per-layer delay, scale, transparency, anchor, stacking order and charset detection
+  (UTF-8, UTF-16, Windows-1256 for Persian). A subtitle file named like the video is offered
+  automatically.
+- **Tap translate** at word / line / block granularity through ML Kit on-device translation, pausing
+  only when the line is about to disappear. Word tap uses real glyph positions, so it also works on
+  RTL and mixed-direction runs.
+- **Subtitle List View** (right panel in landscape, below the player in portrait) with current-row
+  highlight, auto-scroll, search, tap-to-seek and a no-spoiler mode.
+- **Shadowing**: repeat the current block once, or auto-repeat with a configurable count and a pause
+  derived from block duration; *stop at end of block*; press-and-hold inverts any toggle temporarily.
+- **Quick actions**: a dock or free-floating buttons, all repositionable and resizable, including
+  layout mode where you drag each subtitle layer where you want it.
+- **My Words** (Room, with FTS) plus word styling by list membership and CEFR level, and a
+  **learning mode** that pops above-level words in the corner as you watch.
+- **AI help for hard blocks**: Gemini / OpenAI / Anthropic / any OpenAI-compatible endpoint, editable
+  prompt with variables, the previous N blocks of context, a loading ring and an explicit pause
+  contract. Keys live in a Keystore-backed store and are never written to logs or backups.
+- **Settings**: searchable, grouped, typed and versioned, exportable and importable as JSON.
+- **Gestures**: brightness, volume, seek, double tap, two-finger speed, all remappable in Settings.
+- **Opening from outside the app**: video files, subtitle files and direct stream URLs.
+
+The offline dictionary, YouTube, PDF/OCR learning, quizzes, automatic level detection, on-device AI
+and speech-to-text subtitles are designed for but not built. Each has an interface, a flag and a
+short section in [docs/EXTENSION_POINTS.md](docs/EXTENSION_POINTS.md).
+
+## Download
+
+Every version is built, checked and published by GitHub Actions — there is no manual step — and the
+files are on the [Releases page](https://github.com/animalrender/SubLearn/releases):
+
+| File | Install it on |
+| --- | --- |
+| `SubLearn-<version>-arm64-v8a.apk` | almost every phone made after 2017 |
+| `SubLearn-<version>-armeabi-v7a.apk` | older or very cheap 32-bit phones |
+| `SubLearn-<version>-x86_64.apk` | emulators and Chromebooks |
+| `SubLearn-<version>-universal.apk` | any of the above (larger download) |
+
+`SHA256SUMS` lists the checksum of each file. Releases are signed with the public debug key until a
+release keystore is configured (see `docs/AGENT_REQUESTS.md`, REQ-6), so Android will ask you to
+uninstall before switching to a differently signed build.
+
+Besides the numbered `v*` releases there are **development builds**: every green CI run on `main` or
+on a working branch refreshes a pre-release tagged `dev-<branch>` with the APKs of that commit
+(`SubLearn-<version>-dev-<commit>-<abi>.apk`). They are replaced by the next green build of the same
+branch and disappear with the branch, so use them to try the newest work, not to stay on.
+
+## Build
+
+Requirements: JDK 17, Android SDK platform 35 + build-tools 35.0.0, and the Gradle wrapper (no
+system Gradle needed).
+
+```bash
+./gradlew assembleDebug            # APK in app/build/outputs/apk/debug/
+./gradlew assembleRelease          # shrunk, one APK per ABI plus universal, in app/build/outputs/apk/release/
+./gradlew test                     # every unit test (18 test classes today)
+./gradlew lintDebug                # Android lint, abort on error
+./gradlew assembleDebug assembleRelease test lintDebug assembleDebugAndroidTest --continue   # what CI runs
+```
+
+Release builds use the debug key unless `SUBLEARN_KEYSTORE_PATH`, `SUBLEARN_KEYSTORE_PASSWORD`,
+`SUBLEARN_KEY_ALIAS` and `SUBLEARN_KEY_PASSWORD` are set in the environment. `versionCode` is derived
+from `versionName` (`0.2.1` → `201`), so a release only changes one number; `SUBLEARN_VERSION_CODE`
+overrides it.
+
+Publishing is automatic (`.github/workflows/auto-release.yml`, see `docs/DECISIONS.md` D-28): a
+successful CI run on `main` whose `versionName` has no tag yet becomes the release `v<version>`, and
+every other green push refreshes the `dev-<branch>` pre-release. The APKs come from the CI run that
+passed; if the `SUBLEARN_KEYSTORE_BASE64` secret exists the commit is rebuilt and signed with the
+release key instead. `.github/workflows/release.yml` still builds and publishes a `v*` tag by hand.
+
+Without a JVM (the agent sandbox case) run the static checks instead and let CI compile:
+
+```bash
+python3 tools/check_sources.py core app feature tools
+python3 tools/check_symbols.py
+python3 tools/check_deps.py
+python3 tools/check_resources.py core app feature
+```
+
+Translation needs the ML Kit model, which the Play Store service downloads on first use; the app
+offers the download in Settings → Translation and reports progress rather than failing silently.
+
+## Repository layout
+
+```
+app/                    single activity, Koin graph, intent filters, navigation
+core/common             AppResult, SubLearnError, time and text utilities (pure Kotlin)
+core/subtitles          parsers, normalizer, blocks, charset sniffing (pure Kotlin)
+core/settings           typed versioned settings, DataStore storage, JSON export/import
+core/designsystem       tokens, motion, theme, typography, backdrop, all UI strings (EN + FA)
+core/player             PlayerController interface, Media3 implementation, FakePlayerController
+core/translate          ML Kit wrapper, model download state, translation cache
+core/ai                 provider abstraction (Gemini/OpenAI/Anthropic/custom), prompt builder
+core/security           Keystore-backed secret store
+core/lexicon            word levels, frequency list importer
+core/data               Room: My Words, recent videos, translated text cache
+feature/home            recents, open a file, open a URL
+feature/player          the player screen and all of its overlays
+feature/settings        the settings tree
+feature/words           My Words
+feature/learn           learning tab
+```
+
+Read [AGENTS.md](AGENTS.md) first if you are going to change code, then
+[docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
+
+## Privacy
+
+Everything except the optional AI request runs on the device. There is no analytics, no ad SDK and
+no crash reporter in the dependency graph; see [docs/DECISIONS.md](docs/DECISIONS.md).

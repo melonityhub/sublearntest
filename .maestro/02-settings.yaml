@@ -1,0 +1,38 @@
+# Settings → Downloads.
+#
+# Labels come from sublearn/core/designsystem/src/main/res/values/strings.xml:
+#   settings_title / menu_settings = "Settings"
+#   settings_search               = "Search settings"
+#   settings_category_downloads   = "Downloads"
+#
+# The drawer has no labelled hamburger of its own (the icon's contentDescription is R.string
+# menu_settings in SubLearnApp.kt), so it is opened by position at the top-left of the app bar.
+# Every label tap is optional: one wrong string must not throw away the rest of the screenshots.
+appId: com.sublearn.app.debug
+name: Settings and Downloads
+---
+- launchApp
+- waitForAnimationToEnd
+- tapOn:
+    point: "6%,6%"
+- waitForAnimationToEnd
+- tapOn:
+    text: "^Settings$"
+    optional: true
+- waitForAnimationToEnd
+- takeScreenshot: settings
+# The root list is longer than one screen. The screen's own search box filters it down to the
+# Downloads row, which is how the user finds it too (SET-2).
+- runFlow:
+    when:
+      visible: "^Search settings$"
+    commands:
+      - tapOn: "^Search settings$"
+      - inputText: "Downloads"
+      - hideKeyboard
+      - waitForAnimationToEnd
+- tapOn:
+    text: "^Downloads$"
+    optional: true
+- waitForAnimationToEnd
+- takeScreenshot: settings-downloads

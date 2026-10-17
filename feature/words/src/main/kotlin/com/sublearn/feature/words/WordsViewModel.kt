@@ -1,0 +1,155 @@
+package com.sublearn.feature.words
+
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.sublearn.core.data.MarkedWord
+import com.sublearn.core.data.MyWordsExporter
+import com.sublearn.core.data.MyWordsRepository
+import com.sublearn.core.data.WordStatus
+import com.sublearn.core.designsystem.R
+import com.sublearn.core.data.WordsExportKind
+import com.sublearn.core.settings.AppSettings
+import com.sublearn.core.settings.SettingsRepository
+import com.sublearn.core.translate.TranslationService
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.stateIn
+import kotlinx.coroutines.launch
+
+/** My Words: everything the user marked, with filters, edits, and JSON/CSV/Anki TSV export/import. */
+class WordsViewModel(
+    private val myWords: MyWordsRepository,
+    private val translation: TranslationService,
+    settingsRepository: SettingsRepository,
+) : ViewModel() {
+    private val _query = MutableStateFlow("")
+    private val _filter = MutableStateFlow(WordFilter.ALL)
+    private val _sort = MutableStateFlow(WordSort.NEWEST)
+
+    val filter: StateFlow<WordFilter> = _filter.asStateFlow()
+    val sort: StateFlow<WordSort> = _sort.asStateFlow()
+
+    val settings: StateFlow<AppSettings> = settingsRepository.settings
+
+    val rows: StateFlow<List<MarkedWord>> = combine(
+        myWords.observeAll(),
+        _query,
+        _filter,
+        _sort,
+    ) { list, query, filter, sort ->
+        list.filter { it.matches(query, filter) }.sortedWith(sort.comparator)
+    }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), emptyList())
+
+    val count: StateFlow<Int> = myWords.observeCount()
+        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), 0)
+
+    fun setQuery(value: String) {
+        _query.value = value
+    }
+
+    fun setFilter(value: WordFilter) {
+        _filter.value = value
+    }
+
+    fun setSort(value: WordSort) {
+        _sort.value = value
+    }
+
+    fun setStatus(word: MarkedWord, status: WordStatus) {
+        viewModelScope.launch { myWords.setStatus(word.id, status) }
+    }
+
+    fun setNote(word: MarkedWord, note: String) {
+        viewModelScope.launch { myWords.setNote(word.id, note.ifBlank { null }) }
+    }
+
+    fun setTranslation(word: MarkedWord, value: String) {
+        viewModelScope.launch { myWords.setTranslation(word.id, value.ifBlank { null }) }
+    }
+
+    fun remove(word: MarkedWord) {
+        viewModelScope.launch { myWords.remove(word.id) }
+    }
+
+    /** Fills an empty translation from the on-device engine (LRN-4); an existing one is never overwritten. */
+    fun autoTranslate(word: MarkedWord) {
+        if (!word.translation.isNullOrBlank()) return
+        viewModelScope.launch {
+            val text = translation.translate(word.word).getOrNull() ?: return@launch
+            myWords.setTranslation(word.id, text)
+        }
+    }
+
+    fun exportVocabulary(kind: WordsExportKind): String =
+        MyWordsExporter.export(rows.value, kind)
+
+    fun importVocabulary(rawText: String, onFinished: (Int) -> Unit = {}) {
+        viewModelScope.launch {
+            val parsed = MyWordsExporter.importText(rawText)
+            var countImported = 0
+            for (item in parsed) {
+                val id = myWords.mark(item)
+                if (id != 0L) countImported++
+            }
+            onFinished(countImported)
+        }
+    }
+
+    private fun MarkedWord.matches(query: String, filter: WordFilter): Boolean {
+        if (query.isNotBlank()) {
+            val q = query.trim()
+            val matchesText = word.contains(q, ignoreCase = true) ||
+                (lemma?.contains(q, ignoreCase = true) == true) ||
+                (translation?.contains(q, ignoreCase = true) == true) ||
+                (contextText?.contains(q, ignoreCase = true) == true) ||
+                (note?.contains(q, ignoreCase = true) == true)
+            if (!matchesText) return false
+        }
+        return when (filter) {
+            WordFilter.ALL -> true
+            WordFilter.WORDS -> !isPhrase && phraseType.isNullOrBlank()
+            WordFilter.PHRASES -> isPhrase || !phraseType.isNullOrBlank()
+            WordFilter.PHRASAL -> phraseType.equals("PHRASAL", ignoreCase = true)
+            WordFilter.IDIOM -> phraseType.equals("IDIOM", ignoreCase = true)
+            WordFilter.COLLOCATION -> phraseType.equals("COLLOCATION", ignoreCase = true)
+            WordFilter.NEW -> status == WordStatus.NEW
+            WordFilter.LEARNING -> status == WordStatus.LEARNING
+            WordFilter.KNOWN -> status == WordStatus.KNOWN
+        }
+    }
+}
+
+/**
+ * Sort order of the My Words list (LRN-3). Every order is stable: ties fall back to the
+ * most recently marked entry so the list never reshuffles between recompositions.
+ */
+enum class WordSort(val labelRes: Int) {
+    NEWEST(R.string.words_sort_newest),
+    OLDEST(R.string.words_sort_oldest),
+    ALPHABETICAL(R.string.words_sort_alphabetical),
+    LEVEL(R.string.words_sort_level),
+    ;
+
+    val comparator: Comparator<MarkedWord>
+        get() = when (this) {
+            NEWEST -> compareByDescending<MarkedWord> { it.markedAt }.thenBy { it.word.lowercase() }
+            OLDEST -> compareBy<MarkedWord> { it.markedAt }.thenBy { it.word.lowercase() }
+            ALPHABETICAL -> compareBy<MarkedWord>({ it.word.lowercase() }, { it.markedAt })
+            LEVEL -> compareBy<MarkedWord>({ it.level ?: "~~" }, { it.word.lowercase() })
+        }
+}
+
+enum class WordFilter(val status: WordStatus?) {
+    ALL(null),
+    WORDS(null),
+    PHRASES(null),
+    PHRASAL(null),
+    IDIOM(null),
+    COLLOCATION(null),
+    NEW(WordStatus.NEW),
+    LEARNING(WordStatus.LEARNING),
+    KNOWN(WordStatus.KNOWN),
+}

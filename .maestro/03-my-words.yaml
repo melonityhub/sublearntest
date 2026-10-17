@@ -1,0 +1,15 @@
+# My Words, reached through the side drawer.
+# menu_my_words = "My Words" in core/designsystem/src/main/res/values/strings.xml.
+appId: com.sublearn.app.debug
+name: My Words
+---
+- launchApp
+- waitForAnimationToEnd
+- tapOn:
+    point: "6%,6%"
+- waitForAnimationToEnd
+- tapOn:
+    text: "^My Words$"
+    optional: true
+- waitForAnimationToEnd
+- takeScreenshot: my-words
