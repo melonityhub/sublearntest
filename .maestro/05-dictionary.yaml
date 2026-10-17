@@ -1,0 +1,13 @@
+# The Dictionary tab (bottom navigation), included because it is one of the four main tabs and its
+# empty state is worth seeing.
+# tab_dictionary = "Dictionary" in core/designsystem/src/main/res/values/strings.xml.
+appId: com.sublearn.app.debug
+name: Dictionary
+---
+- launchApp
+- waitForAnimationToEnd
+- tapOn:
+    text: "^Dictionary$"
+    optional: true
+- waitForAnimationToEnd
+- takeScreenshot: dictionary

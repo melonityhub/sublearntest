@@ -1,0 +1,7 @@
+# The first screen after launch, with no interaction: this is also the smoke test that the debug
+# build starts without crashing (a crash fails launchApp and leaves the stack trace in logcat).
+appId: com.sublearn.app.debug
+name: Home
+---
+- launchApp
+- takeScreenshot: home
