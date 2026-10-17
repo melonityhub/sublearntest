@@ -153,7 +153,7 @@ purple, not the teal accent the document describes) and the **two top-bar implem
 | 4 · 39003762439 | green, 5/5 flows | Images were 320 × 640 px (no AVD profile), the drawer never opened (6 %, 6 % lands on the status bar) and the fallback hit Quiz; Home was the black launch frame. Fixed with `profile: pixel_6`, the hamburger's `contentDescription` (“Settings”), `extendedWaitUntil`, and a settled Home flow. |
 | 5 · 39004201323 | green, 6/6 flows | Final run; ten PNGs, 600 px wide, ImageMagick installed in a step. |
 
-The first four runs were started by a temporary `push` trigger on `ci/ui-snapshot-trigger`, because
+All five runs were started by a temporary `push` trigger on `ci/ui-snapshot-trigger`, because
 this sandbox's GitHub connection can read the Actions API but cannot create a `workflow_dispatch`
 event (`HTTP 403: Resource not accessible by integration`). The trigger and the marker file are
 removed again, so the committed workflow is `workflow_dispatch` only, as specified.
