@@ -87,8 +87,8 @@ No WCAG problem was found on these screens.
 - **Edge-to-edge mismatch:** Home/Learn/Dictionary paint the white app bar under the status bar
   (white from y = 0), while Settings and My Words leave a 27 dp strip of `#F6F8FA` above their white
   toolbar (white starts at y = 72 px of 1080). Both are visible as a band at the top of the captures.
-- **Settings root** is a single flat list of 14 rows with no dividers, icons or grouping; nine fit on
-  the screen and the tenth (`AI`) is cut by the bottom edge. It reads much less finished than the
+- **Settings root** is a single flat list of 13 rows with no dividers, icons or grouping; nine fit
+  fully on the screen and the tenth (`AI`) is cut by the bottom edge. It reads much less finished than the
   card-based Downloads screen one level down.
 - **Downloads** nests three rounded surfaces: lavender panel `#F3EDF7` (22 dp), card `#F2F7F7`
   (14 dp), pill button inside it. The solid dark circular “i” is visually heavier than everything
@@ -112,7 +112,7 @@ No WCAG problem was found on these screens.
 System sans (Roboto) throughout; no custom family. Hierarchy is consistent inside a screen (title
 16 sp / subtitle 13–14 sp / body 14 sp / small labels 12 sp) but not between screens, because the two
 top-bar implementations disagree. The Settings rows have only 2–4 dp between title and subtitle,
-which makes a 14-row list visually dense, while the gap between rows is generous — the hierarchy is
+which makes a 13-row list visually dense, while the gap between rows is generous — the hierarchy is
 carried by weight, not by space.
 
 ## Comparison with `docs/DESIGN_SYSTEM.md`
