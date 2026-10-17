@@ -168,72 +168,9 @@ jobs:
           target: google_apis
           disable-animations: true
           emulator-options: -no-window -no-audio -no-boot-anim -gpu swiftshader_indirect
-          # The action runs this block with /usr/bin/sh (dash), not bash: no pipefail, no
-          # PIPESTATUS, no [[ ]]. Bash-only syntax here aborts the script with exit code 2 before
-          # its first command, which is what happened on the first run.
-          script: |
-            # No `set -e`: every command below records its own status. The runner invokes this
-            # block through /usr/bin/sh, and a failing command inside an -e wrapper used to abort
-            # the script before the logs were written.
-            set +eu
-            cd "$GITHUB_WORKSPACE" || exit 1
-
-            APK="${APK_PATH:-}"
-            if [ -z "$APK" ]; then
-              APK=$(cat apk-path.txt 2>/dev/null || true)
-            fi
-            if [ -z "$APK" ]; then
-              APK=$(ls sublearn/app/build/outputs/apk/debug/*.apk 2>/dev/null | head -1)
-            fi
-            echo "APK_PATH env: [$APK]"
-            echo "== adb devices =="
-            adb devices || true
-
-            echo "== install $APK =="
-            if adb install -r -t "$APK" > install.log 2>&1; then
-              INSTALL=0
-            else
-              INSTALL=$?
-            fi
-            cat install.log
-            echo "adb install exit code: $INSTALL"
-
-            echo "== clear logcat and start state =="
-            adb logcat -c || true
-            adb shell am force-stop "$APP_ID" || true
-
-            echo "== install Maestro CLI =="
-            curl -Ls "https://get.maestro.mobile.dev" | bash > maestro-install.log 2>&1 || true
-            cat maestro-install.log
-            PATH="$PATH:$HOME/.maestro/bin"
-            export PATH
-            maestro --version >> maestro.log 2>&1 || true
-
-            echo "== run the flows =="
-            mkdir -p maestro-output
-            maestro test \
-              --test-output-dir="$GITHUB_WORKSPACE/maestro-output" \
-              --format junit \
-              --output="$GITHUB_WORKSPACE/maestro-report.xml" \
-              "$GITHUB_WORKSPACE/.maestro" > maestro-run.log 2>&1
-            MAESTRO_EXIT=$?
-            cat maestro-run.log
-            cat maestro-run.log >> maestro.log
-
-            echo "== collect device logs =="
-            adb logcat -d -v threadtime > logcat.txt || true
-            adb logcat -d '*:E' > logcat-errors.txt || true
-            adb shell dumpsys package "$APP_ID" > package-dump.txt 2>&1 || true
-            adb exec-out screencap -p > final-screen.png || true
-
-            echo "== screenshots Maestro produced =="
-            find maestro-output -type f -name '*.png' >> maestro.log 2>&1 || true
-            cat maestro.log || true
-
-            if [ "$INSTALL" -ne 0 ]; then
-              exit "$INSTALL"
-            fi
-            exit "$MAESTRO_EXIT"
+          # One line only: the action splits this input into single-line commands and runs each
+          # with `sh -c`, so the actual body is a script in the repository.
+          script: bash "$GITHUB_WORKSPACE/scripts/run-ui-snapshots.sh"
 
       - name: Collect screenshots and logs
         if: always()
@@ -276,8 +213,8 @@ jobs:
 
           # Logs: the build, the Maestro session, the device's error buffer and the APK list.
           for f in build.log maestro.log maestro-install.log maestro-run.log install.log logcat.txt \
-                   logcat-errors.txt package-dump.txt apk-list.txt maestro-report.xml final-screen.png \
-                   host-info.txt sdk-install.log; do
+                   logcat-errors.txt logcat-errors-time.txt package-dump.txt apk-list.txt \
+                   maestro-report.xml final-screen.png host-info.txt sdk-install.log; do
             if [ -f "$f" ]; then cp "$f" "out/$f"; fi
           done
           if [ -d maestro-output ]; then
