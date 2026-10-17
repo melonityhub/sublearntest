@@ -6,7 +6,7 @@ screenshots inspected from the agent sandbox?
 **Answer:** yes. Run
 [39004201323](https://github.com/melonityhub/sublearntest/actions/runs/39004201323) built the debug
 APK, booted an API 34 x86_64 emulator with KVM, ran six Maestro flows (6/6 passed, 1 m 45 s), and
-published nine PNGs plus the logs to the orphan branch `ui-snapshots`. The images were opened and
+published ten PNGs (nine app captures plus `final-screen.png`) and the logs to the orphan branch `ui-snapshots`. The images were opened and
 read in the sandbox.
 
 ## What is in the repository
@@ -34,9 +34,11 @@ Labels are the exact strings from
 | a | `gh run download <run> -n ui-snapshots` | **FAIL** | exit 1, `error downloading ui-snapshots: Get "https://productionresultssa11.blob.core.windows.net/actions-results/.../ui-snapshots.zip?...": EOF`. The metadata call `gh api .../actions/runs/<id>/artifacts` does work and reports `ui-snapshots`, 6,450,547 bytes, `expired: false`. `gh run view --log` fails the same way (`results-receiver.actions.githubusercontent.com … EOF`). |
 | b | `git clone --depth 1 -b ui-snapshots` and read the PNGs | **PASS** | clone succeeds; the branch holds `home.png`, `home-settled.png`, `settings.png`, `settings-downloads.png`, `my-words.png`, `learn.png`, `dictionary.png`, `drawer.png`, `final-screen.png`, the Maestro report and the logs. |
 | c | `curl` a raw URL and check it is a PNG | **FAIL for curl** | `curl: (35) OpenSSL SSL_connect: SSL_ERROR_SYSCALL in connection to raw.githubusercontent.com:443`, HTTP 000, 0 bytes. The same bytes are reachable through the GitHub Contents API (`home.png`, 601,975 bytes, base64 starts `89 50 4E 47 0D 0A 1A 0A`), and `raw.githubusercontent.com` itself is reachable from outside the sandbox (the README was fetched through the page-fetch proxy). `file` is not installed in the sandbox; `identify` and the PNG signature were used instead. |
-| d | open the image itself, not just download it | **PASS** | all nine PNGs were opened with the image reader and analysed (colours sampled with ImageMagick, crops inspected). |
+| d | open the image itself, not just download it | **PASS** | all ten PNGs were opened with the image reader and analysed (colours sampled with ImageMagick, crops inspected). |
 
 ## Raw links
+
+The branch is force-pushed on every run, so it always holds the newest run only.
 
 - https://raw.githubusercontent.com/melonityhub/sublearntest/ui-snapshots/home-settled.png
 - https://raw.githubusercontent.com/melonityhub/sublearntest/ui-snapshots/settings.png
@@ -149,7 +151,7 @@ purple, not the teal accent the document describes) and the **two top-bar implem
 | 2 · 39003217606 | red | `steps.apk.outputs.apk` arrived empty in the script (`adb: filename doesn't end .apk`). Fixed with `GITHUB_ENV` + `apk-path.txt` + glob fallback. |
 | 3 · 39003468449 | red | same script input, still multi-line: the action splits `script:` on newlines and runs each line as its own `sh -c`, so `if` blocks and cross-line variables cannot work. Fixed by moving the body to `scripts/run-ui-snapshots.sh`. |
 | 4 · 39003762439 | green, 5/5 flows | Images were 320 × 640 px (no AVD profile), the drawer never opened (6 %, 6 % lands on the status bar) and the fallback hit Quiz; Home was the black launch frame. Fixed with `profile: pixel_6`, the hamburger's `contentDescription` (“Settings”), `extendedWaitUntil`, and a settled Home flow. |
-| 5 · 39004201323 | green, 6/6 flows | Final run; nine PNGs, 600 px wide, ImageMagick installed in a step. |
+| 5 · 39004201323 | green, 6/6 flows | Final run; ten PNGs, 600 px wide, ImageMagick installed in a step. |
 
 The first four runs were started by a temporary `push` trigger on `ci/ui-snapshot-trigger`, because
 this sandbox's GitHub connection can read the Actions API but cannot create a `workflow_dispatch`
