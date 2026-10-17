@@ -126,8 +126,8 @@ carried by weight, not by space.
 | One elevation step (`cardElevation = 6 dp`, tonal rather than shadow) | Downloads stacks tonal surfaces three deep, which reads as elevation without the token. |
 | Typography is remapped once, with line height and letter spacing tuned for the Persian fallback | The Persian line is visibly tighter than the Latin body text and is not right-aligned in the card. |
 | “Direction comes from content … RTL layouts are mirrored by using start/end” | The Persian description in Downloads is a left-aligned RTL run inside an LTR layout. |
-| Every interactive element has a `contentDescription`; 44 dp minimum touch target | The My Words import/export buttons are icon-only up/down arrows; their meaning is not obvious, and both screenshot and hierarchy give them no label. |
-| Rows/rails never spill past the viewport | The My Words chip row spills past the right edge. |
+| Every interactive element has a `contentDescription`; 44 dp minimum touch target | The My Words import/export actions are icon-only up/down arrows. Their `contentDescription` cannot be judged from a screenshot, but the screen gives the user no visible label for either. |
+| Rails report overflow and never spill past the viewport (written for the player) | The same failure mode exists outside the player: the My Words chip row spills past the right edge with no arrow or fade. |
 
 Two discrepancies are not cosmetic: the **palette** (the screenshots show the Material baseline
 purple, not the teal accent the document describes) and the **two top-bar implementations**
