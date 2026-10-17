@@ -11,6 +11,15 @@ name: UI snapshots
 
 on:
   workflow_dispatch:
+  # TEMPORARY bootstrap trigger. The GitHub connection available in the Arena sandbox can read the
+  # Actions API but not create a workflow_dispatch event (403 "Resource not accessible by
+  # integration"), so a push that touches this one marker file starts the run instead. Remove this
+  # block, and the ci/ui-snapshot-trigger file, once the first green run exists; the workflow is
+  # meant to be workflow_dispatch-only.
+  push:
+    branches: [main]
+    paths:
+      - ci/ui-snapshot-trigger
 
 permissions:
   contents: write
