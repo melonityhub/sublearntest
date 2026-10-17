@@ -112,7 +112,14 @@ jobs:
             exit 1
           fi
           echo "apk=$apk" >> "$GITHUB_OUTPUT"
+          # The step output is also exported as an environment variable and written to a file: the
+          # first emulator run received an empty value through `${{ steps.apk.outputs.apk }}`, and
+          # both of these survive whatever swallowed it.
+          echo "APK_PATH=$apk" >> "$GITHUB_ENV"
+          printf '%s\n' "$apk" > apk-path.txt
           echo "using $apk" | tee -a "$GITHUB_STEP_SUMMARY"
+          echo "step output: [${{ steps.apk.outputs.apk }}] | env: [$apk] | file: [$(cat apk-path.txt)]" \
+            >> apk-list.txt
 
       - name: Enable KVM
         if: steps.build.outcome == 'success'
@@ -165,16 +172,29 @@ jobs:
           # PIPESTATUS, no [[ ]]. Bash-only syntax here aborts the script with exit code 2 before
           # its first command, which is what happened on the first run.
           script: |
-            set -u
+            # No `set -e`: every command below records its own status. The runner invokes this
+            # block through /usr/bin/sh, and a failing command inside an -e wrapper used to abort
+            # the script before the logs were written.
+            set +eu
             cd "$GITHUB_WORKSPACE" || exit 1
 
-            APK="${{ steps.apk.outputs.apk }}"
+            APK="${APK_PATH:-}"
+            if [ -z "$APK" ]; then
+              APK=$(cat apk-path.txt 2>/dev/null || true)
+            fi
+            if [ -z "$APK" ]; then
+              APK=$(ls sublearn/app/build/outputs/apk/debug/*.apk 2>/dev/null | head -1)
+            fi
+            echo "APK_PATH env: [$APK]"
             echo "== adb devices =="
             adb devices || true
 
             echo "== install $APK =="
-            adb install -r -t "$APK" > install.log 2>&1
-            INSTALL=$?
+            if adb install -r -t "$APK" > install.log 2>&1; then
+              INSTALL=0
+            else
+              INSTALL=$?
+            fi
             cat install.log
             echo "adb install exit code: $INSTALL"
 
